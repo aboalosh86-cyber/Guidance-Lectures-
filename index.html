@@ -91,7 +91,7 @@ iframe{border:0;width:100%;height:calc(100vh - 60px);background:#fff}
 
 /* اللمسة الفاخرة - تصميم قصي زهير سعيد */
 :root{--navy:#071b31;--navy2:#103b5c;--gold:#d7a63b;--gold2:#f4d27a;--paper:#f7f4ed;--ink:#14293a;--line:rgba(20,65,91,.14)}
-html,body{background:radial-gradient(circle at 10% 0%,#fffdf8 0,#f7f4ed 34%,#eef4f5 100%);font-family:"Cairo",Tahoma,Arial,sans-serif}
+html,body{background:radial-gradient(circle at 10% 0%,#fffdf8 0,#f7f4ed 34%,#eef4f5 100%);font-family:"Noto Sans Arabic","Noto Sans Arabic SemBd",Tahoma,Arial,sans-serif}
 .hero{position:relative;overflow:hidden;background:linear-gradient(116deg,#06172a 0%,#0b2b48 54%,#123e5c 100%);padding:31px 24px 32px;box-shadow:0 16px 42px rgba(7,27,49,.24);isolation:isolate}
 .hero::before{content:"";position:absolute;inset:-140px -30px auto auto;width:470px;height:470px;border:1px solid rgba(244,210,122,.18);border-radius:50%;box-shadow:0 0 0 28px rgba(244,210,122,.035),0 0 0 57px rgba(244,210,122,.025);transform:rotate(18deg);z-index:-1}
 .hero::after{content:"";position:absolute;left:-70px;bottom:-110px;width:300px;height:220px;background:radial-gradient(ellipse,rgba(215,166,59,.18),transparent 70%);z-index:-1}
@@ -137,15 +137,15 @@ html,body{background:radial-gradient(circle at 10% 0%,#fffdf8 0,#f7f4ed 34%,#eef
 .system-card .modal-close{background:#0b2b48;font-family:"Cairo",Tahoma,sans-serif}
 @media(max-width:560px){.hero{padding:26px 17px 28px}.hero-row{min-height:130px}.brand-text{padding-right:17px}.brand-text::before{height:94px}.brand-text h1{font-size:28px;letter-spacing:-.9px}.hero-kicker{font-size:11px}.main{padding:30px 13px 42px}.grid{gap:21px 12px}.cover-button{border-radius:22px}.lecture-tile h3{font-size:14px;margin-top:10px}.section-kicker{font-size:10px}.section-head h2{font-size:23px}.designer-credit{border-radius:18px;padding:25px 12px 21px}}
 </style>
-
-<style id="cairo-final-override">
-html,body,button,input,select,textarea,
-.hero,.hero *, .main,.main *, .viewer,.viewer *,
-.system-modal,.system-modal *{
-  font-family:"Cairo",Tahoma,Arial,sans-serif !important;
-}
+<style id="offline-classic-fonts">
+@font-face{font-family:Cairo;font-style:normal;font-weight:600;src:url("./fonts/Cairo-600.ttf") format("truetype");font-display:swap}
+@font-face{font-family:Cairo;font-style:normal;font-weight:700;src:url("./fonts/Cairo-700.ttf") format("truetype");font-display:swap}
+@font-face{font-family:Cairo;font-style:normal;font-weight:800;src:url("./fonts/Cairo-800.ttf") format("truetype");font-display:swap}
+@font-face{font-family:Cairo;font-style:normal;font-weight:900;src:url("./fonts/Cairo-900.ttf") format("truetype");font-display:swap}
+@font-face{font-family:Tajawal;font-style:normal;font-weight:500;src:url("./fonts/Tajawal-500.ttf") format("truetype");font-display:swap}
+@font-face{font-family:Tajawal;font-style:normal;font-weight:700;src:url("./fonts/Tajawal-700.ttf") format("truetype");font-display:swap}
+@font-face{font-family:Tajawal;font-style:normal;font-weight:800;src:url("./fonts/Tajawal-800.ttf") format("truetype");font-display:swap}
 </style>
-
 </head>
 <body>
 <header class="hero" id="top">
