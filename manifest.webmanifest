@@ -1,24 +1,23 @@
 {
-  "name": "Guidance Lectures",
-  "short_name": "Guidance Lectures",
-  "description": "Guidance Lectures - قصي زهير سعيد / مرشد تربوي",
+  "name": "المحاضرات الإرشادية",
+  "short_name": "المحاضرات",
+  "description": "مكتبة تفاعلية للمحاضرات الإرشادية",
   "lang": "ar",
   "dir": "rtl",
-  "start_url": "./index.html",
+  "start_url": "./",
   "scope": "./",
   "display": "standalone",
-  "orientation": "portrait",
-  "background_color": "#f2f8fb",
+  "background_color": "#f4f8fb",
   "theme_color": "#0d2b47",
   "icons": [
     {
-      "src": "./icon-192.png",
+      "src": "icon-192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "./icon-512.png",
+      "src": "icon-512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"

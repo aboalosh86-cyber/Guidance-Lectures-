@@ -6,14 +6,18 @@
 <meta name="theme-color" content="#0d2b47">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
-<meta name="apple-mobile-web-app-title" content="Guidance Lectures">
+<meta name="apple-mobile-web-app-title" content="المحاضرات الإرشادية">
 <link rel="manifest" href="manifest.webmanifest">
-<link rel="apple-touch-icon" href="icon-192.png">
-<title>Guidance Lectures</title>
+<link rel="apple-touch-icon" href="icon-180.png">
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+<title>المحاضرات الإرشادية</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
 :root{--navy:#0d2b47;--navy2:#123d61;--gold:#e6b84b;--ink:#10212d}
 *{box-sizing:border-box}
-html,body{margin:0;min-height:100%;background:linear-gradient(180deg,#f9fcfe,#f2f8fb);font-family:"Tajawal",Tahoma,Arial,sans-serif;color:var(--ink)}
+html,body{margin:0;min-height:100%;background:linear-gradient(180deg,#f9fcfe,#f2f8fb);font-family:"Cairo",Tahoma,Arial,sans-serif;color:var(--ink)}
 .hero{background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff;padding:30px 24px 26px;box-shadow:0 9px 30px rgba(13,43,71,.16)}
 .hero-inner{max-width:1320px;margin:auto}
 .brand{display:flex;align-items:center;gap:14px}
@@ -64,21 +68,21 @@ iframe{border:0;width:100%;height:calc(100vh - 60px);background:#fff}
 .tool-btn{appearance:none;border:1px solid #d5e3eb;background:#fff;border-radius:20px;padding:14px 16px;display:flex;align-items:center;gap:13px;text-align:right;cursor:pointer;box-shadow:0 8px 24px rgba(13,43,71,.09);transition:transform .18s ease,box-shadow .18s ease;font-family:"Cairo",Tahoma,sans-serif;color:#0d2b47}
 .tool-btn:hover{transform:translateY(-3px);box-shadow:0 13px 28px rgba(13,43,71,.14)}
 .tool-btn strong{display:block;font-size:16px;font-weight:900}
-.tool-btn small{display:block;color:#677b88;font-family:"Tajawal",Tahoma,sans-serif;font-size:12px;font-weight:700;margin-top:2px}
+.tool-btn small{display:block;color:#677b88;font-family:"Cairo",Tahoma,sans-serif;font-size:12px;font-weight:700;margin-top:2px}
 .tool-icon{width:44px;height:44px;flex:0 0 44px;border-radius:14px;display:grid;place-items:center;font-size:24px;font-weight:900;background:#eff6fa;color:#0d2b47}
 .install-btn .tool-icon{background:linear-gradient(145deg,#f5d57f,#e5b345)}
 .designer-credit{scroll-margin-top:14px;text-align:center;margin:38px auto 20px;padding:27px 18px 24px;max-width:920px;border-top:1px solid #d9e6ed;position:relative;color:#0d2b47}
 .designer-credit::before{content:"";position:absolute;top:-2px;left:50%;transform:translateX(-50%);width:120px;height:3px;border-radius:99px;background:linear-gradient(90deg,#d9a331,#f2ce71,#d9a331)}
 .credit-kicker{font-family:"Cairo",Tahoma,sans-serif;color:#a8791e;font-weight:900;font-size:17px;letter-spacing:.2px;margin-bottom:3px}
 .credit-main{font-family:"Cairo",Tahoma,sans-serif;font-weight:900;font-size:clamp(22px,2.6vw,34px);line-height:1.35;text-shadow:0 1px 0 #fff}
-.credit-school{font-family:"Tajawal",Tahoma,sans-serif;font-weight:800;font-size:16px;color:#607581;margin-top:5px}
+.credit-school{font-family:"Cairo",Tahoma,sans-serif;font-weight:800;font-size:16px;color:#607581;margin-top:5px}
 .footer{display:none!important}
 .install-btn.is-hidden{display:none!important}
 .system-modal{position:fixed;inset:0;z-index:500;display:none;align-items:center;justify-content:center;padding:20px;background:rgba(5,24,40,.55);backdrop-filter:blur(7px)}
 .system-modal.open{display:flex}
 .system-card{width:min(92vw,520px);background:#fff;border-radius:24px;box-shadow:0 24px 80px rgba(0,0,0,.28);padding:22px;color:#12304b}
 .system-card h3{font-family:"Cairo";font-size:23px;margin:0 0 8px}
-.system-card p{font-family:"Tajawal";font-size:16px;line-height:1.75;margin:0;color:#425b6b}
+.system-card p{font-family:"Cairo";font-size:16px;line-height:1.75;margin:0;color:#425b6b}
 .system-card .steps{margin:13px 0 0;padding:12px 16px;background:#f3f8fb;border-radius:15px;font-weight:700;line-height:1.8}
 .system-card .modal-close{margin-top:16px;border:0;background:#0d2b47;color:#fff;border-radius:12px;padding:10px 18px;font-family:"Cairo";font-weight:800;cursor:pointer}
 @media(max-width:850px){.hero-row{flex-direction:column;align-items:stretch}.brand-text{text-align:center}}
@@ -97,7 +101,7 @@ html,body{background:radial-gradient(circle at 10% 0%,#fffdf8 0,#f7f4ed 34%,#eef
 .hero-kicker{display:inline-flex;align-items:center;gap:9px;color:var(--gold2);font-size:13px;font-weight:800;letter-spacing:.2px;margin-bottom:10px}
 .hero-kicker::before{content:"✦";font-family:serif;color:var(--gold);font-size:18px}
 .brand-text h1{font-family:"Cairo",Tahoma,sans-serif;letter-spacing:-1.2px;text-shadow:0 3px 18px rgba(0,0,0,.25)}
-.brand-text p{font-family:"Tajawal",Tahoma,sans-serif;line-height:1.75;color:#dceaf1}
+.brand-text p{font-family:"Cairo",Tahoma,sans-serif;line-height:1.75;color:#dceaf1}
 .author-line{display:inline-block;color:var(--gold2);font-size:.88em;letter-spacing:.1px}
 .main{max-width:1320px;padding:39px 23px 56px}
 .section-head{border-bottom:0;padding:0;margin-bottom:26px;align-items:end}
@@ -110,7 +114,7 @@ html,body{background:radial-gradient(circle at 10% 0%,#fffdf8 0,#f7f4ed 34%,#eef
 .cover-button{border-radius:26px;background:#fff;border:1px solid rgba(215,166,59,.19);box-shadow:0 16px 32px rgba(12,43,67,.13),0 2px 0 rgba(255,255,255,.8) inset;transition:transform .24s cubic-bezier(.23,1,.32,1),box-shadow .24s ease,border-color .24s ease}
 .cover-button::after{border:1px solid rgba(255,255,255,.78);box-shadow:inset 0 2px 0 rgba(255,255,255,.35),inset 0 -34px 55px rgba(6,27,49,.08)}
 .cover-button:hover{transform:translateY(-8px) scale(1.015);border-color:rgba(215,166,59,.65);box-shadow:0 24px 42px rgba(12,43,67,.21),0 0 0 4px rgba(215,166,59,.08)}
-.badge{top:13px;left:13px;background:rgba(7,27,49,.91);color:var(--gold2);border-color:rgba(244,210,122,.48);font-family:"Tajawal",Tahoma,sans-serif;box-shadow:0 7px 18px rgba(0,0,0,.25)}
+.badge{top:13px;left:13px;background:rgba(7,27,49,.91);color:var(--gold2);border-color:rgba(244,210,122,.48);font-family:"Cairo",Tahoma,sans-serif;box-shadow:0 7px 18px rgba(0,0,0,.25)}
 .lecture-tile h3{font-family:"Cairo",Tahoma,sans-serif;font-size:17px;line-height:1.55;color:#17364d;margin:14px 4px 0}
 .lecture-tile h3::after{content:"";display:block;width:24px;height:2px;border-radius:4px;background:var(--gold);margin:8px auto 0;opacity:.7}
 .app-tools{max-width:520px;margin:50px auto 0}
@@ -119,18 +123,18 @@ html,body{background:radial-gradient(circle at 10% 0%,#fffdf8 0,#f7f4ed 34%,#eef
 .tool-btn:hover{transform:translateY(-4px);box-shadow:0 18px 35px rgba(13,43,71,.16);border-color:rgba(215,166,59,.65)}
 .tool-icon{width:46px;height:46px;border-radius:14px;background:#0c2d4a!important;color:var(--gold2);font-family:serif;font-size:26px;box-shadow:0 6px 14px rgba(7,27,49,.18)}
 .tool-btn strong{font-family:"Cairo",Tahoma,sans-serif;font-size:15px}
-.tool-btn small{font-family:"Tajawal",Tahoma,sans-serif}
+.tool-btn small{font-family:"Cairo",Tahoma,sans-serif}
 .designer-credit{margin:58px auto 10px;padding:31px 18px 26px;color:var(--navy);background:rgba(255,255,255,.38);border:1px solid rgba(215,166,59,.15);border-radius:22px;box-shadow:0 12px 32px rgba(13,43,71,.05)}
 .designer-credit::before{top:-2px;width:150px;height:4px}
-.credit-kicker{font-family:"Tajawal",Tahoma,sans-serif;color:#a47925;font-size:14px}
+.credit-kicker{font-family:"Cairo",Tahoma,sans-serif;color:#a47925;font-size:14px}
 .credit-main{font-family:"Cairo",Tahoma,sans-serif;font-size:clamp(20px,2.4vw,31px);letter-spacing:-.4px}
-.credit-school{font-family:"Tajawal",Tahoma,sans-serif}
+.credit-school{font-family:"Cairo",Tahoma,sans-serif}
 .viewerbar{height:64px;background:linear-gradient(100deg,#06172a,#103b5c);border-bottom:2px solid var(--gold);padding:9px 14px}
-.action{font-family:"Tajawal",Tahoma,sans-serif;border-radius:11px}
+.action{font-family:"Cairo",Tahoma,sans-serif;border-radius:11px}
 .action.gold{background:linear-gradient(145deg,#f4d27a,#d7a63b);color:#071b31}
 .system-card{border:1px solid rgba(215,166,59,.35);box-shadow:0 25px 90px rgba(4,20,36,.36)}
 .system-card h3{font-family:"Cairo",Tahoma,sans-serif}
-.system-card .modal-close{background:#0b2b48;font-family:"Tajawal",Tahoma,sans-serif}
+.system-card .modal-close{background:#0b2b48;font-family:"Cairo",Tahoma,sans-serif}
 @media(max-width:560px){.hero{padding:26px 17px 28px}.hero-row{min-height:130px}.brand-text{padding-right:17px}.brand-text::before{height:94px}.brand-text h1{font-size:28px;letter-spacing:-.9px}.hero-kicker{font-size:11px}.main{padding:30px 13px 42px}.grid{gap:21px 12px}.cover-button{border-radius:22px}.lecture-tile h3{font-size:14px;margin-top:10px}.section-kicker{font-size:10px}.section-head h2{font-size:23px}.designer-credit{border-radius:18px;padding:25px 12px 21px}}
 </style>
 <style id="offline-classic-fonts">
@@ -461,8 +465,10 @@ function decodeUtf8Base64(b64){
 }
 document.querySelectorAll('.cover-button').forEach(btn=>btn.addEventListener('click',()=>{
  viewerTitle.textContent=btn.dataset.title;
- frame.src='about:blank';
- frame.srcdoc=''; frame.src=lectures[btn.dataset.key];
+ const lectureUrl=new URL(lectures[btn.dataset.key],window.location.href);
+ lectureUrl.searchParams.set('v','20260924-0114');
+ frame.removeAttribute('srcdoc');
+ frame.src=lectureUrl.href;
  viewer.classList.add('open');
 }));
 document.getElementById('closeBtn').onclick=()=>{viewer.classList.remove('open');frame.srcdoc='';frame.src='about:blank';};
@@ -518,7 +524,7 @@ installBtn?.addEventListener('click',async()=>{
 
 /* تسجيل عامل الخدمة عند الاستضافة الآمنة */
 if('serviceWorker' in navigator && location.protocol!=='file:'){
-  window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));
+  window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js?v=20260924-0114',{updateViaCache:'none'}).then(r=>r.update()).catch(()=>{}));
 }
 </script>
 </body>

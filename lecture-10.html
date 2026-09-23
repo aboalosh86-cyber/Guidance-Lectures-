@@ -7,25 +7,28 @@
 
 
 <title>الغش - محاضرة إرشادية</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
 :root{--paper:#fffdfa;--soft:#eef8fc;--blue:#d9eff9;--gold:#e6b84b;--navy:#0d2b47}
 *{box-sizing:border-box}
 html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#edf1f3}
-body{font-family:"Tajawal","Segoe UI",Tahoma,Arial,sans-serif;color:#111827}
+body{font-family:"Cairo","Segoe UI",Tahoma,Arial,sans-serif;color:#111827}
 .app{position:relative;width:100vw;height:100vh;background:var(--paper)}
 .slide{position:absolute;inset:0;display:none;background:var(--paper);padding:clamp(14px,1.8vw,24px) clamp(18px,4vw,56px) clamp(58px,6.5vh,72px)}
 .slide.active{display:flex}
 .slide::before{content:"";position:absolute;right:-55px;top:-75px;width:210px;height:210px;border-radius:50%;background:var(--blue);opacity:.85}
 .inner{position:relative;z-index:2;width:100%;height:100%;display:flex;flex-direction:column;align-items:center}
-h1{margin:0 0 clamp(8px,1.2vh,13px);font-family:"Cairo","Tajawal",sans-serif;font-size:clamp(31px,3.8vw,58px);line-height:1.08;font-weight:900;text-align:center;color:#08253f}
+h1{margin:0 0 clamp(8px,1.2vh,13px);font-family:"Cairo","Cairo",sans-serif;font-size:clamp(31px,3.8vw,58px);line-height:1.08;font-weight:900;text-align:center;color:#08253f}
 .visual{width:min(80vw,1180px);height:min(49vh,500px);min-height:245px;display:flex;align-items:center;justify-content:center;border-radius:22px;overflow:hidden;background:#fff;box-shadow:0 10px 28px rgba(30,53,70,.12)}
 .visual img{width:100%;height:100%;object-fit:contain;display:block;background:#fff}
 .body{width:min(86vw,1260px);margin:clamp(8px,1.3vh,13px) auto 0;text-align:center;font-size:clamp(18px,1.78vw,27px);line-height:1.52;font-weight:700;color:#111827}
-.question{width:min(86vw,1260px);margin:clamp(8px,1.25vh,13px) auto 0;padding:clamp(9px,1.25vh,14px) clamp(15px,2vw,24px);background:var(--soft);border:2px solid #9fd5ec;border-right:8px solid var(--gold);border-radius:17px;text-align:center;font-family:"Cairo","Tajawal",sans-serif;font-size:clamp(17px,1.62vw,24px);line-height:1.46;font-weight:800;color:#0d2b47}
-.nav{position:absolute;bottom:12px;z-index:8;border:0;border-radius:11px;padding:10px 19px;font-family:"Cairo","Tajawal",sans-serif;font-size:14px;font-weight:800;cursor:pointer}
+.question{width:min(86vw,1260px);margin:clamp(8px,1.25vh,13px) auto 0;padding:clamp(9px,1.25vh,14px) clamp(15px,2vw,24px);background:var(--soft);border:2px solid #9fd5ec;border-right:8px solid var(--gold);border-radius:17px;text-align:center;font-family:"Cairo","Cairo",sans-serif;font-size:clamp(17px,1.62vw,24px);line-height:1.46;font-weight:800;color:#0d2b47}
+.nav{position:absolute;bottom:12px;z-index:8;border:0;border-radius:11px;padding:10px 19px;font-family:"Cairo","Cairo",sans-serif;font-size:14px;font-weight:800;cursor:pointer}
 #prev{left:14px;background:#e7edf1;color:#24323c}
 #next{right:14px;background:var(--navy);color:#fff}
-#count{position:absolute;left:50%;bottom:13px;transform:translateX(-50%);z-index:7;font-family:"Cairo","Tajawal",sans-serif;font-size:14px;font-weight:800;color:#0d2b47;background:#fff;border:1px solid #dce6ec;border-radius:999px;padding:5px 11px}
+#count{position:absolute;left:50%;bottom:13px;transform:translateX(-50%);z-index:7;font-family:"Cairo","Cairo",sans-serif;font-size:14px;font-weight:800;color:#0d2b47;background:#fff;border:1px solid #dce6ec;border-radius:999px;padding:5px 11px}
 #fs{position:absolute;left:9px;top:9px;z-index:9;width:34px;height:34px;border:1px solid #d7dee3;background:rgba(255,255,255,.86);border-radius:9px;cursor:pointer;opacity:.65}
 @media(max-width:700px){.slide{padding:13px 12px 54px}h1{font-size:29px}.visual{width:95vw;height:43vh;min-height:205px;border-radius:16px}.body,.question{width:95vw}.body{font-size:17px}.question{font-size:16px}.nav{bottom:8px;padding:9px 13px;font-size:12px}#prev{left:7px}#next{right:7px}#count{bottom:14px;font-size:10px}}
 </style>
