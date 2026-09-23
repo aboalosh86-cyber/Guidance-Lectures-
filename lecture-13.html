@@ -14,7 +14,7 @@
 :root{--paper:#fffdfa;--soft:#eef8fc;--gold:#e6b84b;--navy:#0d2b47;--heading:#08253f;--ink:#111827}
 *{box-sizing:border-box}
 html,body{margin:0;width:100%;height:100%;background:var(--paper);font-family:"Cairo",Tahoma,Arial,sans-serif;color:var(--ink);overflow:hidden}
-.stage{height:100vh;display:flex;flex-direction:column}
+.stage{height:100dvh;display:flex;flex-direction:column}
 .slides{flex:1;position:relative;min-height:0}
 .slide{position:absolute;inset:0;display:none;flex-direction:column;align-items:center;padding:16px 24px 8px;text-align:center}
 .slide.active{display:flex}
@@ -41,6 +41,89 @@ button:disabled{opacity:.35;cursor:default}
  button{padding:8px 10px;font-size:13px}
 }
 </style>
+
+<style id="aggressive-mobile-fix">
+@media(max-width:720px){
+  .slide{
+    padding:8px 8px 4px!important;
+  }
+  h1{
+    font-size:clamp(24px,7vw,34px)!important;
+    margin-bottom:6px!important;
+  }
+  .visual{
+    width:96vw!important;
+    height:min(43dvh,390px)!important;
+  }
+  .body{
+    font-size:16px!important;
+    line-height:1.45!important;
+    margin:6px 10px 4px!important;
+  }
+  .question{
+    width:94vw!important;
+    font-size:15px!important;
+    line-height:1.4!important;
+    padding:7px 9px!important;
+    margin-top:4px!important;
+  }
+  .controls{
+    height:54px!important;
+    flex-basis:54px!important;
+    padding:5px 8px!important;
+    gap:6px!important;
+    grid-template-columns:1fr auto 1fr!important;
+  }
+  .side{gap:4px!important}
+  button{
+    padding:7px 9px!important;
+    font-size:12px!important;
+    border-radius:10px!important;
+  }
+  .counter{
+    background:#0d2b47!important;
+    color:#fff!important;
+    border:1px solid #e6b84b!important;
+    border-radius:999px!important;
+    padding:5px 10px!important;
+    font-size:11px!important;
+    box-shadow:0 3px 8px rgba(13,43,71,.22)!important;
+  }
+}
+</style>
+
+
+<style id="aggressive-image-size-final">
+.visual{
+  width:min(96vw,1200px)!important;
+  height:min(62vh,680px)!important;
+  max-height:none!important;
+}
+.visual img,
+.visual picture,
+.visual video{
+  width:100%!important;
+  height:100%!important;
+  object-fit:contain!important;
+  display:block!important;
+}
+@media(max-width:720px){
+  .visual{
+    width:98vw!important;
+    height:min(58dvh,520px)!important;
+    max-height:none!important;
+    margin:4px auto!important;
+  }
+  .visual img,
+  .visual picture,
+  .visual video{
+    width:100%!important;
+    height:100%!important;
+    object-fit:contain!important;
+  }
+}
+</style>
+
 </head>
 <body>
 <div class="stage">
@@ -157,7 +240,6 @@ button:disabled{opacity:.35;cursor:default}
     <div class="counter" id="counter">الشريحة 1 من 15</div>
     <div class="side left">
       <button class="secondary" id="prev">→ السابق</button>
-      <button class="secondary" id="full">ملء الشاشة</button>
     </div>
   </footer>
 </div>
@@ -173,7 +255,6 @@ function show(i){
 }
 document.getElementById('next').onclick=()=>show(current+1);
 document.getElementById('prev').onclick=()=>show(current-1);
-document.getElementById('full').onclick=()=>{if(!document.fullscreenElement)document.documentElement.requestFullscreen?.();else document.exitFullscreen?.();};
 document.addEventListener('keydown',e=>{
  if(e.key==='ArrowLeft'||e.key==='PageDown'||e.key===' ')show(current+1);
  if(e.key==='ArrowRight'||e.key==='PageUp')show(current-1);
