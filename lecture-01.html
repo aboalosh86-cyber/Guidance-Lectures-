@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>التنمر المدرسي - المحاضرات الإرشادية</title>
+
+
+
+<style>
+:root{
+  --ink:#111111; --navy:#0d2b47; --paper:#fbfaf6; --soft:#eef8fc;
+  --blue:#d8effa; --gold:#e8b84f; --muted:#5b6670;
+}
+*{box-sizing:border-box}
+html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#e9edf0}
+body{font-family:"Tajawal",Tahoma,Arial,sans-serif;color:var(--ink)}
+.app{width:100vw;height:100vh;position:relative;background:var(--paper)}
+.slide{
+  position:absolute; inset:0; display:none; background:var(--paper);
+  padding:clamp(16px,2.1vw,30px) clamp(20px,4vw,60px) clamp(60px,7vh,78px);
+}
+.slide.active{display:flex;flex-direction:column}
+.slide::before{
+  content:""; position:absolute; top:-70px; right:-55px; width:210px; height:210px;
+  border-radius:50%; background:var(--blue); opacity:.82; z-index:0;
+}
+.inner{position:relative;z-index:1;display:flex;flex-direction:column;height:100%;align-items:center}
+h1{
+  font-family:"Cairo",Tahoma,Arial,sans-serif;
+  color:#000; font-size:clamp(34px,4.8vw,72px); line-height:1.05;
+  margin:0 0 clamp(12px,2vh,22px); text-align:center; font-weight:800;
+  letter-spacing:-.5px;
+}
+.visual{
+  width:min(74vw,1120px); height:min(48vh,500px); min-height:230px;
+  border-radius:24px; overflow:hidden; background:#fff; box-shadow:0 9px 24px rgba(0,0,0,.10);
+  display:flex; align-items:center; justify-content:center;
+}
+.visual img{
+  width:100%; height:100%; object-fit:contain; background:#fff; display:block;
+}
+.body{
+  width:min(82vw,1220px); text-align:center;
+  font-size:clamp(19px,2vw,31px); line-height:1.45; font-weight:700;
+  margin:clamp(10px,1.8vh,18px) auto 0; color:#111;
+}
+.question{
+  width:min(82vw,1220px); margin:clamp(10px,1.8vh,18px) auto 0;
+  background:var(--soft); border:1.5px solid #9dd4ec; border-right:7px solid var(--gold);
+  border-radius:18px; padding:clamp(10px,1.6vh,17px) clamp(16px,2vw,26px);
+  font-size:clamp(18px,1.75vw,28px); line-height:1.45; font-weight:800; text-align:center; color:#111;
+}
+.nav{
+  position:absolute; bottom:15px; z-index:5; border:0; border-radius:12px;
+  padding:12px 22px; font-family:"Cairo"; font-size:16px; font-weight:700; cursor:pointer;
+}
+#prev{left:18px;background:#e8eef2;color:#23313c}
+#next{right:18px;background:var(--navy);color:white}
+#count{
+  position:absolute; bottom:21px; left:50%; transform:translateX(-50%);
+  z-index:4; font-family:"Cairo"; font-size:13px; color:#66737d;
+}
+#fullscreen{
+  position:absolute; top:10px; left:10px; z-index:6; width:34px; height:34px;
+  border:1px solid #d7dde2; background:rgba(255,255,255,.75); border-radius:10px;
+  cursor:pointer; font-size:15px; color:#33414a; opacity:.55;
+}
+@media(max-width:700px){
+  .slide{padding:15px 16px 58px}
+  h1{font-size:32px}
+  .visual{width:92vw;height:42vh;min-height:210px;border-radius:17px}
+  .body,.question{width:92vw}
+  .body{font-size:18px}.question{font-size:17px}
+  .nav{font-size:13px;padding:9px 14px;bottom:10px}
+  #prev{left:8px} #next{right:8px} #count{bottom:16px;font-size:10px}
+}
+@media(max-height:650px){
+  .slide{padding-top:12px;padding-bottom:48px}
+  h1{font-size:clamp(28px,4vw,46px);margin-bottom:8px}
+  .visual{height:42vh}
+  .body{font-size:clamp(16px,1.7vw,23px);margin-top:8px}
+  .question{font-size:clamp(15px,1.55vw,21px);margin-top:8px;padding:8px 16px}
+}
+</style>
+</head>
+<body>
+<div class="app">
+<button id="fullscreen" title="ملء الشاشة">⛶</button>
+
+<section class="slide active">
+  <div class="inner">
+    <h1>التنمر المدرسي</h1>
+    <div class="visual"><img src="c4169dea9bc7fd3f47e0.jpg" alt="التنمر المدرسي" loading="eager"></div>
+    <div class="body">معًا نبني مدرسة آمنة يحترم فيها الجميع بعضهم بعضًا.</div>
+    <div class="question">ماذا تلاحظون في الصورة؟ وما السلوك الذي يجعل المدرسة أكثر أمانًا؟</div>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="inner">
+    <h1>ما هو التنمر؟</h1>
+    <div class="visual"><img src="4b2c57ca824504be2a9d.png" alt="ما هو التنمر؟" loading="eager"></div>
+    <div class="body">التنمر سلوك مؤذٍ يتكرر، ويقصد به إيذاء شخص أو تخويفه أو إحراجه.</div>
+    <div class="question">ما الذي يجعل هذا السلوك مؤذيًا للآخر؟</div>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="inner">
+    <h1>ليس كل خلاف تنمرًا</h1>
+    <div class="visual"><img src="51c9c6b0be2d6098f482.webp" alt="ليس كل خلاف تنمرًا" loading="eager"></div>
+    <div class="body">قد يختلف زميلان مرة واحدة ثم يتصالحان. أمّا التنمر فيتكرر ويقصد به الإيذاء.</div>
+    <div class="question">كيف نميز بين خلاف عابر وتنمر متكرر؟</div>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="inner">
+    <h1>التنمر اللفظي</h1>
+    <div class="visual"><img src="29e99673508c59b5a9c2.jpg" alt="التنمر اللفظي" loading="eager"></div>
+    <div class="body">السخرية والألقاب الجارحة والكلمات المهينة قد تؤذي أكثر مما نتوقع.</div>
+    <div class="question">كيف يمكن أن نستبدل الكلمة الجارحة بكلمة محترمة؟</div>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="inner">
+    <h1>التنمر الجسدي</h1>
+    <div class="visual"><img src="c2cfd5e1d00adc88b487.jpg" alt="التنمر الجسدي" loading="eager"></div>
+    <div class="body">الدفع أو الضرب أو إتلاف ممتلكات الآخرين سلوك مرفوض ويجب إيقافه.</div>
+    <div class="question">ما التصرف الآمن إذا شاهدنا هذا الموقف؟</div>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="inner">
+    <h1>الإقصاء والعزل</h1>
+    <div class="visual"><img src="576ebeee5a3c8d115a3d.jpg" alt="الإقصاء والعزل" loading="eager"></div>
+    <div class="body">استبعاد زميل عمدًا وتركه وحيدًا قد يكون نوعًا من التنمر الاجتماعي.</div>
+    <div class="question">ماذا يمكن أن نفعل حتى لا يشعر أحد بأنه غير مرغوب فيه؟</div>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="inner">
+    <h1>التنمر الإلكتروني</h1>
+    <div class="visual"><img src="e848d44e0fad45c96972.png" alt="التنمر الإلكتروني" loading="eager"></div>
+    <div class="body">الرسائل والصور والتعليقات الجارحة عبر الهاتف أو الإنترنت قد تسبب أذى حقيقيًا.</div>
+    <div class="question">ماذا نفعل إذا وصلتنا رسالة مسيئة أو شاهدنا إساءة لزميل؟</div>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="inner">
+    <h1>كيف يشعر من يتعرض للتنمر؟</h1>
+    <div class="visual"><img src="5f0e78e3bbae78d22967.png" alt="كيف يشعر من يتعرض للتنمر؟" loading="eager"></div>
+    <div class="body">قد يشعر بالحزن أو الخوف أو الوحدة، وقد يفقد رغبته في المشاركة داخل المدرسة.</div>
+    <div class="question">ما الذي يمكن أن نقوله لزميل يشعر بهذه المشاعر؟</div>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="inner">
+    <h1>إذا تعرضتُ للتنمر</h1>
+    <div class="visual"><img src="12ffd5aee687f3fb5006.jpg" alt="إذا تعرضتُ للتنمر" loading="eager"></div>
+    <div class="body">أبتعد عن الموقف إن أمكن، وأحافظ على هدوئي، ولا أواجه الأذى بأذى.</div>
+    <div class="question">ما أول خطوة آمنة يمكن أن أفعلها في هذا الموقف؟</div>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="inner">
+    <h1>أخبر شخصًا بالغًا أثق به</h1>
+    <div class="visual"><img src="6e590ab52f3d2d45f560.jpg" alt="أخبر شخصًا بالغًا أثق به" loading="eager"></div>
+    <div class="body">طلب المساعدة شجاعة. يمكن أن أخبر المعلم أو المرشد أو الإدارة أو ولي الأمر.</div>
+    <div class="question">من الأشخاص الذين تستطيع طلب المساعدة منهم في المدرسة؟</div>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="inner">
+    <h1>إذا شاهدت التنمر</h1>
+    <div class="visual"><img src="a14b1dc82b76e681de21.png" alt="إذا شاهدت التنمر" loading="eager"></div>
+    <div class="body">لا أضحك ولا أشجع الأذى. أساند زميلي وأطلب مساعدة شخص بالغ عندما يكون الموقف خطِرًا.</div>
+    <div class="question">كيف تتحول من متفرج إلى شخص يساعد بأمان؟</div>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="inner">
+    <h1>قف مع زميلك</h1>
+    <div class="visual"><img src="586ae2a3e7d89b00633b.jpg" alt="قف مع زميلك" loading="eager"></div>
+    <div class="body">كلمة طيبة أو مساعدة بسيطة قد تجعل زميلك يشعر بأنه ليس وحده.</div>
+    <div class="question">ما أبسط تصرف يمكنك فعله لمساندة زميل متضايق؟</div>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="inner">
+    <h1>إذا كنتُ قد أخطأت</h1>
+    <div class="visual"><img src="c610d6284ddd20e6f78a.jpg" alt="إذا كنتُ قد أخطأت" loading="eager"></div>
+    <div class="body">أتوقف عن السلوك المؤذي، وأعتذر بصدق، وأحاول إصلاح ما سببته من ضرر.</div>
+    <div class="question">ما الذي يجعل الاعتذار صادقًا ومفيدًا؟</div>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="inner">
+    <h1>لنغيّر الموقف</h1>
+    <div class="visual"><img src="4dd14a70b21f21a5a027.jpg" alt="لنغيّر الموقف" loading="eager"></div>
+    <div class="body">بدل أن نترك زميلًا وحده، ندعوه للمشاركة ونشعره بأنه جزء من الجماعة.</div>
+    <div class="question">لو كنت في هذا المشهد، ماذا ستفعل لتجعل الموقف أفضل؟</div>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="inner">
+    <h1>مدرستنا مكان للجميع</h1>
+    <div class="visual"><img src="9572751c3e19aec9ba51.png" alt="مدرستنا مكان للجميع" loading="eager"></div>
+    <div class="body">الاحترام واللطف والتعاون تجعل المدرسة مكانًا يشعر فيه الجميع بالأمان.</div>
+    <div class="question">ما السلوك الذي ستبدأ به من اليوم؟</div>
+  </div>
+</section>
+
+<button class="nav" id="prev">السابق</button>
+<div id="count"></div>
+<button class="nav" id="next">التالي</button>
+</div>
+<script>
+const slides=[...document.querySelectorAll('.slide')];
+let index=0;
+const prev=document.getElementById('prev'), next=document.getElementById('next'), count=document.getElementById('count');
+function show(i){
+  index=Math.max(0,Math.min(slides.length-1,i));
+  slides.forEach((s,n)=>s.classList.toggle('active',n===index));
+  prev.style.visibility=index===0?'hidden':'visible';
+  next.style.visibility=index===slides.length-1?'hidden':'visible';
+  count.textContent=`${index+1} / ${slides.length}`;
+}
+prev.onclick=()=>show(index-1);
+next.onclick=()=>show(index+1);
+document.addEventListener('keydown',e=>{
+  if(e.key==='ArrowLeft') show(index-1);
+  if(e.key==='ArrowRight'||e.key==='Enter'||e.key===' ') show(index+1);
+  if(e.key.toLowerCase()==='f') toggleFull();
+});
+function toggleFull(){
+  if(!document.fullscreenElement) document.documentElement.requestFullscreen?.();
+  else document.exitFullscreen?.();
+}
+document.getElementById('fullscreen').onclick=toggleFull;
+show(0);
+</script>
+</body></html>

@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+
+
+
+<title>الاستعداد للامتحانات - النسخة المصححة</title>
+<style>
+:root{--paper:#fffdfa;--soft:#eef8fc;--blue:#d9eff9;--gold:#e6b84b;--navy:#0d2b47}
+*{box-sizing:border-box}
+html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#edf1f3}
+body{font-family:"Tajawal","Segoe UI",Tahoma,Arial,sans-serif;color:#111827}
+.app{position:relative;width:100vw;height:100vh;background:var(--paper)}
+.slide{
+ position:absolute;inset:0;display:none;background:var(--paper);
+ padding:clamp(14px,1.8vw,24px) clamp(18px,4vw,56px) clamp(58px,6.5vh,72px);
+}
+.slide.active{display:flex}
+.slide::before{
+ content:"";position:absolute;right:-55px;top:-75px;width:210px;height:210px;
+ border-radius:50%;background:var(--blue);opacity:.85
+}
+.inner{position:relative;z-index:2;width:100%;height:100%;display:flex;flex-direction:column;align-items:center}
+h1{
+ margin:0 0 clamp(8px,1.2vh,13px);
+ font-family:"Cairo","Tajawal","Segoe UI",Tahoma,Arial,sans-serif;
+ font-size:clamp(31px,3.8vw,58px);line-height:1.08;font-weight:900;
+ text-align:center;color:#08253f;letter-spacing:-.4px
+}
+.visual{
+ width:min(80vw,1180px);height:min(49vh,500px);min-height:230px;
+ display:flex;align-items:center;justify-content:center;border-radius:22px;
+ overflow:hidden;background:#fff;box-shadow:0 10px 28px rgba(30,53,70,.12)
+}
+.visual img{
+ width:100%;height:100%;object-fit:contain;display:block;background:#fff
+}
+.body{
+ width:min(86vw,1260px);margin:clamp(8px,1.3vh,13px) auto 0;text-align:center;
+ font-family:"Tajawal","Segoe UI",Tahoma,Arial,sans-serif;
+ font-size:clamp(18px,1.78vw,27px);line-height:1.52;font-weight:700;color:#111827
+}
+.question{
+ width:min(86vw,1260px);margin:clamp(8px,1.25vh,13px) auto 0;
+ padding:clamp(9px,1.25vh,14px) clamp(15px,2vw,24px);background:var(--soft);
+ border:2px solid #9fd5ec;border-right:8px solid var(--gold);border-radius:17px;text-align:center;
+ font-family:"Cairo","Tajawal","Segoe UI",Tahoma,Arial,sans-serif;
+ font-size:clamp(17px,1.62vw,24px);line-height:1.46;font-weight:800;color:#0d2b47
+}
+.nav{
+ position:absolute;bottom:12px;z-index:8;border:0;border-radius:11px;padding:10px 19px;
+ font-family:"Cairo","Tajawal","Segoe UI",Tahoma,Arial,sans-serif;font-size:14px;font-weight:800;cursor:pointer
+}
+#prev{left:14px;background:#e7edf1;color:#24323c}
+#next{right:14px;background:var(--navy);color:#fff}
+#count{
+ position:absolute;left:50%;bottom:13px;transform:translateX(-50%);z-index:7;
+ font-family:"Cairo","Tajawal",Tahoma,Arial,sans-serif;font-size:14px;font-weight:800;color:#0d2b47;
+ background:#fff;border:1px solid #dce6ec;border-radius:999px;padding:5px 11px;
+ box-shadow:0 2px 8px rgba(13,43,71,.07)
+}
+#fs{
+ position:absolute;left:9px;top:9px;z-index:9;width:34px;height:34px;border:1px solid #d7dee3;
+ background:rgba(255,255,255,.86);border-radius:9px;cursor:pointer;opacity:.6
+}
+@media(max-width:700px){
+ .slide{padding:13px 12px 54px}
+ h1{font-size:29px}
+ .visual{width:95vw;height:43vh;min-height:205px;border-radius:16px}
+ .body,.question{width:95vw}.body{font-size:17px}.question{font-size:16px}
+ .nav{bottom:8px;padding:9px 13px;font-size:12px}#prev{left:7px}#next{right:7px}#count{bottom:14px;font-size:10px}
+}
+@media(max-height:650px){
+ h1{font-size:clamp(26px,3.4vw,42px)}
+ .visual{height:43vh}
+ .body{font-size:clamp(15px,1.45vw,20px);margin-top:6px}
+ .question{font-size:clamp(14px,1.35vw,19px);margin-top:6px;padding:7px 12px}
+}
+</style>
+</head>
+<body>
+<div class="app">
+<button id="fs" title="ملء الشاشة">⛶</button>
+
+<section class="slide active">
+ <div class="inner">
+  <h1>الاستعداد للامتحانات</h1>
+  <div class="visual"><img src="701ee2975c7c82bc3e9f.jpg" alt="الاستعداد للامتحانات"></div>
+  <div class="body">الاستعداد الجيد يبدأ بالتخطيط والاجتهاد، ويجعلنا أكثر هدوءًا وثقة.</div>
+  <div class="question">ما أهم خطوة تساعدك على الاستعداد الجيد للامتحانات؟</div>
+ </div>
+</section>
+
+<section class="slide">
+ <div class="inner">
+  <h1>حدد هدفك وكن طموحًا</h1>
+  <div class="visual"><img src="e2f1dce6d958ff3cd82a.jpg" alt="حدد هدفك وكن طموحًا"></div>
+  <div class="body">عندما أحدد هدفي أعرف لماذا أدرس، ويصبح الاجتهاد طريقًا واضحًا نحو النجاح.</div>
+  <div class="question">ما الهدف الذي تتمنى تحقيقه في امتحاناتك؟</div>
+ </div>
+</section>
+
+<section class="slide">
+ <div class="inner">
+  <h1>نظّم وقتك بذكاء</h1>
+  <div class="visual"><img src="c6083c4f7b14f6d6aa31.jpg" alt="نظّم وقتك بذكاء"></div>
+  <div class="body">أقسم وقتي بين المراجعة والراحة والنوم، حتى أدرس بتركيز من دون إرهاق.</div>
+  <div class="question">كيف يمكن أن ترتب وقتك في أيام المراجعة؟</div>
+ </div>
+</section>
+
+<section class="slide">
+ <div class="inner">
+  <h1>هيّئ مكانًا مناسبًا للمذاكرة</h1>
+  <div class="visual"><img src="9212d19dd236d807d4e0.jpg" alt="هيّئ مكانًا مناسبًا للمذاكرة"></div>
+  <div class="body">المكان الهادئ والمرتب والمضيء يساعدني على التركيز والفهم.</div>
+  <div class="question">ما صفات المكان المناسب للمذاكرة؟</div>
+ </div>
+</section>
+
+<section class="slide">
+ <div class="inner">
+  <h1>راجع بانتظام ولا تؤجل</h1>
+  <div class="visual"><img src="18cc443168c76369b729.jpg" alt="راجع بانتظام ولا تؤجل"></div>
+  <div class="body">المراجعة اليومية البسيطة تمنع تراكم الدروس وتجعل التذكر أسهل.</div>
+  <div class="question">ماذا يحدث عندما نؤجل المراجعة إلى آخر يوم؟</div>
+ </div>
+</section>
+
+<section class="slide">
+ <div class="inner">
+  <h1>استخدم طرقًا متنوعة للمذاكرة</h1>
+  <div class="visual"><img src="58daf6609d3434539d5a.jpg" alt="استخدم طرقًا متنوعة للمذاكرة"></div>
+  <div class="body">أقرأ وأكتب وألخص وأحل، لأن تنويع طريقة المذاكرة يساعدني على فهم الدرس.</div>
+  <div class="question">أي طريقة مذاكرة تساعدك أكثر على الفهم؟</div>
+ </div>
+</section>
+
+<section class="slide">
+ <div class="inner">
+  <h1>احرص على حل الأسئلة السابقة</h1>
+  <div class="visual"><img src="9a47ec5e0dffdb8f7a70.jpg" alt="احرص على حل الأسئلة السابقة"></div>
+  <div class="body">حل الأسئلة والتدرب عليها يساعدني على معرفة مستوى استعدادي ونقاط الضعف.</div>
+  <div class="question">كيف يفيدك حل الأسئلة قبل الامتحان؟</div>
+ </div>
+</section>
+
+<section class="slide">
+ <div class="inner">
+  <h1>اطلب المساعدة عند الحاجة</h1>
+  <div class="visual"><img src="7f6bf63505ebb1e1cd94.jpg" alt="اطلب المساعدة عند الحاجة"></div>
+  <div class="body">إذا لم أفهم سؤالًا أو درسًا، أطلب المساعدة بدل أن أترك المشكلة دون حل.</div>
+  <div class="question">ممن تطلب المساعدة عندما تواجه صعوبة؟</div>
+ </div>
+</section>
+
+<section class="slide">
+ <div class="inner">
+  <h1>اهتم بصحتك وتغذيتك</h1>
+  <div class="visual"><img src="61a9ae3960233e81b231.jpg" alt="اهتم بصحتك وتغذيتك"></div>
+  <div class="body">الغذاء الصحي وشرب الماء والنشاط المعتدل تساعد الجسم والعقل على التركيز.</div>
+  <div class="question">ما العادات الصحية التي تساعدك أثناء فترة الامتحانات؟</div>
+ </div>
+</section>
+
+<section class="slide">
+ <div class="inner">
+  <h1>احصل على قسط كافٍ من النوم</h1>
+  <div class="visual"><img src="957b941d3956624d4427.jpg" alt="احصل على قسط كافٍ من النوم"></div>
+  <div class="body">النوم الجيد يساعد على التركيز والتذكر ويجعلني نشيطًا يوم الامتحان.</div>
+  <div class="question">لماذا يعد النوم المبكر مهمًا قبل الامتحان؟</div>
+ </div>
+</section>
+
+<section class="slide">
+ <div class="inner">
+  <h1>ابتعد عن المشتتات</h1>
+  <div class="visual"><img src="f7e1b0e3f347af4e3f07.jpg" alt="ابتعد عن المشتتات"></div>
+  <div class="body">أبعد الهاتف وكل ما يقطع تركيزي عندما أبدأ المذاكرة.</div>
+  <div class="question">ما أكثر شيء يشتتك أثناء الدراسة؟</div>
+ </div>
+</section>
+
+<section class="slide">
+ <div class="inner">
+  <h1>ثق بنفسك وقدراتك</h1>
+  <div class="visual"><img src="82c3a0f04dff9f18b362.jpg" alt="ثق بنفسك وقدراتك"></div>
+  <div class="body">الثقة بالنفس تعني أن أؤمن بقدرتي وأواصل المحاولة حتى لو كان الدرس صعبًا.</div>
+  <div class="question">ماذا تقول لنفسك عندما تشعر أن السؤال صعب؟</div>
+ </div>
+</section>
+
+<section class="slide">
+ <div class="inner">
+  <h1>حافظ على هدوئك وتجنب التوتر</h1>
+  <div class="visual"><img src="2bbc8b4a5ae91f9f4937.jpg" alt="حافظ على هدوئك وتجنب التوتر"></div>
+  <div class="body">الهدوء والتنفس ببطء يساعدانني على التفكير بشكل أفضل عندما أشعر بالقلق.</div>
+  <div class="question">ما الذي يساعدك على الهدوء قبل الامتحان؟</div>
+ </div>
+</section>
+
+<section class="slide">
+ <div class="inner">
+  <h1>إدارة الوقت أثناء الامتحان</h1>
+  <div class="visual"><img src="b85c794d177f425bd268.jpg" alt="إدارة الوقت أثناء الامتحان"></div>
+  <div class="body">أقرأ الأسئلة جيدًا، وأبدأ بما أعرفه، وأوزع وقتي وأراجع إجاباتي قبل التسليم.</div>
+  <div class="question">كيف توزع وقتك داخل قاعة الامتحان؟</div>
+ </div>
+</section>
+
+<section class="slide">
+ <div class="inner">
+  <h1>مستقبلك يبدأ اليوم</h1>
+  <div class="visual"><img src="8511749c2bb9cc70ccf3.jpg" alt="مستقبلك يبدأ اليوم"></div>
+  <div class="body">كل جهد أبذله اليوم هو خطوة نحو نجاحي ومستقبلي الأفضل.</div>
+  <div class="question">ما الشيء الذي ستبدأ به من اليوم استعدادًا للامتحان؟</div>
+ </div>
+</section>
+
+<button id="prev" class="nav" type="button">السابق</button>
+<div id="count"></div>
+<button id="next" class="nav" type="button">التالي</button>
+</div>
+<script>
+(function(){
+ const slides=[...document.querySelectorAll('.slide')];
+ const prev=document.getElementById('prev'), next=document.getElementById('next');
+ const count=document.getElementById('count'), fs=document.getElementById('fs');
+ let index=0;
+ function show(n){
+   index=Math.max(0,Math.min(slides.length-1,n));
+   slides.forEach((s,i)=>s.classList.toggle('active',i===index));
+   prev.disabled=index===0; next.disabled=index===slides.length-1;
+   prev.style.opacity=index===0?'.35':'1'; next.style.opacity=index===slides.length-1?'.35':'1';
+   count.textContent='الشريحة '+(index+1)+' من '+slides.length;
+ }
+ prev.onclick=()=>show(index-1); next.onclick=()=>show(index+1);
+ document.addEventListener('keydown',e=>{
+   if(e.key==='ArrowLeft')show(index-1);
+   if(e.key==='ArrowRight'||e.key==='Enter'||e.key===' ')show(index+1);
+ });
+ fs.onclick=()=>{ if(!document.fullscreenElement)document.documentElement.requestFullscreen?.(); else document.exitFullscreen?.(); };
+ show(0);
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>الاحترام - محاضرة 13 شريحة</title>
+<style>
+*{box-sizing:border-box}
+html,body{
+  margin:0;width:100%;height:100%;overflow:hidden;background:#fff;
+  font-family:Tahoma,Arial,sans-serif;
+}
+.slide{
+  position:absolute;inset:0;display:none;
+  align-items:center;justify-content:center;background:#fff;
+}
+.slide.active{display:flex}
+.slide img{
+  width:100vw;height:100vh;
+  object-fit:contain;object-position:center;
+  display:block;background:#fff;
+}
+#progress{
+  position:fixed;top:0;right:0;height:4px;
+  background:#0d2b47;z-index:20;transition:width .2s ease;
+}
+.nav{
+  position:fixed;bottom:10px;z-index:30;border:0;border-radius:12px;
+  padding:9px 15px;font-weight:800;font-size:14px;cursor:pointer;
+  opacity:.72;backdrop-filter:blur(6px);
+}
+#prev{left:12px;background:rgba(255,255,255,.90);color:#173044;border:1px solid #d7e1e7}
+#next{right:12px;background:rgba(13,43,71,.92);color:white}
+#count{
+  position:fixed;left:50%;bottom:11px;transform:translateX(-50%);
+  z-index:30;background:rgba(255,255,255,.92);color:#173044;
+  border:1px solid #d7e1e7;border-radius:999px;padding:6px 11px;
+  font-size:13px;font-weight:800;
+}
+#fs{
+  position:fixed;left:10px;top:10px;z-index:30;
+  width:36px;height:36px;border:1px solid #d7e1e7;border-radius:10px;
+  background:rgba(255,255,255,.86);color:#173044;font-size:18px;cursor:pointer;opacity:.68;
+}
+</style>
+</head>
+<body>
+<div id="progress"></div>
+
+<section class="slide active" data-index="1">
+  <img src="ca31a033575596d8f1de.png" alt="الاحترام">
+</section>
+<section class="slide" data-index="2">
+  <img src="5ef4a3e8e4d8eb32a4f1.png" alt="ما هو الاحترام؟">
+</section>
+<section class="slide" data-index="3">
+  <img src="cc765dc1eeb7de3508f3.png" alt="أحترم معلمي">
+</section>
+<section class="slide" data-index="4">
+  <img src="d3232882c9ca886f0441.png" alt="أحترم زملائي">
+</section>
+<section class="slide" data-index="5">
+  <img src="84a9e15186ccdcd2bc1b.png" alt="أستمع عندما يتحدث الآخرون">
+</section>
+<section class="slide" data-index="6">
+  <img src="9f84a4fc8c01c8ebe4d4.png" alt="أختار الكلمات المهذبة">
+</section>
+<section class="slide" data-index="7">
+  <img src="100cdd5dd33d3a1f591f.png" alt="أحترم ممتلكات المدرسة">
+</section>
+<section class="slide" data-index="8">
+  <img src="1c9bf594ea1a3b228a53.png" alt="أحترم الدور والنظام">
+</section>
+<section class="slide" data-index="9">
+  <img src="e4767ecba4db6fb7a8dd.png" alt="أحترم الكبير وأرفق بالصغير">
+</section>
+<section class="slide" data-index="10">
+  <img src="205ec8cb7402c6c18db3.png" alt="ثمار الاحترام">
+</section>
+<section class="slide" data-index="11">
+  <img src="da147be1365ec9894adf.png" alt="أتعامل بلطف مع الآخرين">
+</section>
+<section class="slide" data-index="12">
+  <img src="a09e193bf5b0ebb32c7a.png" alt="أُظهر الاحترام في كل مكان">
+</section>
+<section class="slide" data-index="13">
+  <img src="bef21e47073bb10348bc.png" alt="كيف أكون تلميذًا محترمًا؟">
+</section>
+<button id="fs" title="ملء الشاشة">⛶</button>
+<button id="prev" class="nav">السابق</button>
+<div id="count">1 / 13</div>
+<button id="next" class="nav">التالي</button>
+
+<script>
+const slides=[...document.querySelectorAll('.slide')];
+let i=0;
+const count=document.getElementById('count');
+const progress=document.getElementById('progress');
+
+function show(n){
+  i=Math.max(0,Math.min(slides.length-1,n));
+  slides.forEach((s,k)=>s.classList.toggle('active',k===i));
+  count.textContent=(i+1)+' / '+slides.length;
+  progress.style.width=((i+1)/slides.length*100)+'%';
+  document.getElementById('prev').style.visibility=i===0?'hidden':'visible';
+  document.getElementById('next').textContent=i===slides.length-1?'النهاية':'التالي';
+}
+document.getElementById('next').onclick=()=>{if(i<slides.length-1)show(i+1)};
+document.getElementById('prev').onclick=()=>show(i-1);
+document.getElementById('fs').onclick=async()=>{
+  try{
+    if(!document.fullscreenElement) await document.documentElement.requestFullscreen();
+    else await document.exitFullscreen();
+  }catch(e){}
+};
+document.addEventListener('keydown',e=>{
+  if(e.key==='ArrowLeft'||e.key==='PageDown'||e.key===' ') show(i+1);
+  if(e.key==='ArrowRight'||e.key==='PageUp') show(i-1);
+});
+show(0);
+</script>
+</body>
+</html>

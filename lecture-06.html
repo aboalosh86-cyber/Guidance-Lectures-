@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+
+
+
+<title>التسامح - محاضرة إرشادية</title>
+<style>
+:root{--paper:#fffdfa;--soft:#eef8fc;--blue:#d9eff9;--gold:#e6b84b;--navy:#0d2b47}
+*{box-sizing:border-box}
+html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#edf1f3}
+body{font-family:"Tajawal","Segoe UI",Tahoma,Arial,sans-serif;color:#111827}
+.app{position:relative;width:100vw;height:100vh;background:var(--paper)}
+.slide{
+ position:absolute;inset:0;display:none;background:var(--paper);
+ padding:clamp(14px,1.8vw,24px) clamp(18px,4vw,56px) clamp(58px,6.5vh,72px);
+}
+.slide.active{display:flex}
+.slide::before{
+ content:"";position:absolute;right:-55px;top:-75px;width:210px;height:210px;
+ border-radius:50%;background:var(--blue);opacity:.85
+}
+.inner{position:relative;z-index:2;width:100%;height:100%;display:flex;flex-direction:column;align-items:center}
+h1{
+ margin:0 0 clamp(8px,1.2vh,13px);
+ font-family:"Cairo","Tajawal","Segoe UI",Tahoma,Arial,sans-serif;
+ font-size:clamp(31px,3.8vw,58px);line-height:1.08;font-weight:900;
+ text-align:center;color:#08253f;letter-spacing:-.4px
+}
+.visual{
+ width:min(80vw,1180px);height:min(49vh,500px);min-height:230px;
+ display:flex;align-items:center;justify-content:center;border-radius:22px;
+ overflow:hidden;background:#fff;box-shadow:0 10px 28px rgba(30,53,70,.12)
+}
+.visual img{width:100%;height:100%;object-fit:contain;display:block;background:#fff}
+.body{
+ width:min(86vw,1260px);margin:clamp(8px,1.3vh,13px) auto 0;text-align:center;
+ font-family:"Tajawal","Segoe UI",Tahoma,Arial,sans-serif;
+ font-size:clamp(18px,1.78vw,27px);line-height:1.52;font-weight:700;color:#111827
+}
+.question{
+ width:min(86vw,1260px);margin:clamp(8px,1.25vh,13px) auto 0;
+ padding:clamp(9px,1.25vh,14px) clamp(15px,2vw,24px);background:var(--soft);
+ border:2px solid #9fd5ec;border-right:8px solid var(--gold);border-radius:17px;text-align:center;
+ font-family:"Cairo","Tajawal","Segoe UI",Tahoma,Arial,sans-serif;
+ font-size:clamp(17px,1.62vw,24px);line-height:1.46;font-weight:800;color:#0d2b47
+}
+.nav{
+ position:absolute;bottom:12px;z-index:8;border:0;border-radius:11px;padding:10px 19px;
+ font-family:"Cairo","Tajawal","Segoe UI",Tahoma,Arial,sans-serif;font-size:14px;font-weight:800;cursor:pointer
+}
+#prev{left:14px;background:#e7edf1;color:#24323c}
+#next{right:14px;background:var(--navy);color:#fff}
+#count{
+ position:absolute;left:50%;bottom:13px;transform:translateX(-50%);z-index:7;
+ font-family:"Cairo","Tajawal",Tahoma,Arial,sans-serif;font-size:14px;font-weight:800;color:#0d2b47;
+ background:#fff;border:1px solid #dce6ec;border-radius:999px;padding:5px 11px;
+ box-shadow:0 2px 8px rgba(13,43,71,.07)
+}
+#fs{
+ position:absolute;left:9px;top:9px;z-index:9;width:34px;height:34px;border:1px solid #d7dee3;
+ background:rgba(255,255,255,.86);border-radius:9px;cursor:pointer;opacity:.6
+}
+@media(max-width:700px){
+ .slide{padding:13px 12px 54px}
+ h1{font-size:29px}
+ .visual{width:95vw;height:43vh;min-height:205px;border-radius:16px}
+ .body,.question{width:95vw}.body{font-size:17px}.question{font-size:16px}
+ .nav{bottom:8px;padding:9px 13px;font-size:12px}#prev{left:7px}#next{right:7px}#count{bottom:14px;font-size:10px}
+}
+@media(max-height:650px){
+ h1{font-size:clamp(26px,3.4vw,42px)}
+ .visual{height:43vh}
+ .body{font-size:clamp(15px,1.45vw,20px);margin-top:6px}
+ .question{font-size:clamp(14px,1.35vw,19px);margin-top:6px;padding:7px 12px}
+}
+</style>
+</head>
+<body>
+<div class="app">
+<button id="fs" title="ملء الشاشة">⛶</button>
+
+<section class="slide active">
+ <div class="inner">
+  <h1>ما معنى التسامح؟</h1>
+  <div class="visual"><img src="c2bdaf9dad4db27d15e5.jpg" alt="ما معنى التسامح؟"></div>
+  <div class="body">التسامح هو أن أختار الهدوء والاحترام، وأمنح نفسي والآخرين فرصة لإصلاح الخطأ.</div>
+  <div class="question">كيف تشرح التسامح بكلماتك؟</div>
+ </div>
+</section>
+
+<section class="slide">
+ <div class="inner">
+  <h1>التسامح يبدأ بكلمة طيبة</h1>
+  <div class="visual"><img src="8ef1388dad9846ed6740.jpg" alt="التسامح يبدأ بكلمة طيبة"></div>
+  <div class="body">أحيانًا تكون كلمة هادئة أو اعتذار صادق بدايةً لحل المشكلة.</div>
+  <div class="question">ما الكلمة التي يمكن أن تهدّئ الخلاف؟</div>
+ </div>
+</section>
+
+<section class="slide">
+ <div class="inner">
+  <h1>أسامح من أخطأ بحقي</h1>
+  <div class="visual"><img src="a0bbfd197d20fa0dc9c6.jpg" alt="أسامح من أخطأ بحقي"></div>
+  <div class="body">المسامحة لا تعني أن الخطأ كان صحيحًا، بل تعني أنني لا أستمر في الغضب.</div>
+  <div class="question">هل يمكن أن نسامح ونطلب في الوقت نفسه عدم تكرار الخطأ؟</div>
+ </div>
+</section>
+
+<section class="slide">
+ <div class="inner">
+  <h1>التسامح بين الزملاء</h1>
+  <div class="visual"><img src="0b416b7fead05825dbc2.jpg" alt="التسامح بين الزملاء"></div>
+  <div class="body">قد نختلف أثناء اللعب أو الدراسة، لكننا نستطيع أن نعود إلى التعاون والاحترام.</div>
+  <div class="question">ماذا تفعل إذا اختلفت مع زميلك؟</div>
+ </div>
+</section>
+
+<section class="slide">
+ <div class="inner">
+  <h1>أساعد بدل أن أعاتب</h1>
+  <div class="visual"><img src="ed2f7c3bf727bc3ab716.jpg" alt="أساعد بدل أن أعاتب"></div>
+  <div class="body">عندما أرى زميلاً متضايقًا أسانده، وأحاول أن أكون جزءًا من الحل.</div>
+  <div class="question">كيف يمكن أن تساعد زميلًا حزينًا؟</div>
+ </div>
+</section>
+
+<section class="slide">
+ <div class="inner">
+  <h1>أهدأ قبل أن أتصرف</h1>
+  <div class="visual"><img src="fd2c7c023ba651d79453.jpg" alt="أهدأ قبل أن أتصرف"></div>
+  <div class="body">الهدوء يساعدني على التفكير قبل الرد، ويمنعني من قول أو فعل شيء أندم عليه.</div>
+  <div class="question">ماذا تفعل عندما تشعر بالغضب؟</div>
+ </div>
+</section>
+
+<section class="slide">
+ <div class="inner">
+  <h1>أمنح فرصة جديدة</h1>
+  <div class="visual"><img src="f9c07f5a257296751602.jpg" alt="أمنح فرصة جديدة"></div>
+  <div class="body">من التسامح أن أعطي الآخر فرصة ليصحح خطأه ويبدأ من جديد.</div>
+  <div class="question">متى يستحق الشخص فرصة جديدة؟</div>
+ </div>
+</section>
+
+<section class="slide">
+ <div class="inner">
+  <h1>التسامح ينمّي الخير</h1>
+  <div class="visual"><img src="c0667f606b43dc1c5d74.jpg" alt="التسامح ينمّي الخير"></div>
+  <div class="body">عندما يسود التسامح تنمو المحبة والثقة والتعاون بين الناس.</div>
+  <div class="question">ما الشيء الجميل الذي يصنعه التسامح في المدرسة؟</div>
+ </div>
+</section>
+
+<section class="slide">
+ <div class="inner">
+  <h1>أساعد زميلي على الفهم</h1>
+  <div class="visual"><img src="e488004cfa5d1464854f.jpg" alt="أساعد زميلي على الفهم"></div>
+  <div class="body">التسامح يظهر أيضًا عندما أصبر على زميلي وأساعده بدل أن أسخر منه.</div>
+  <div class="question">كيف تساعد زميلًا يجد صعوبة في درس؟</div>
+ </div>
+</section>
+
+<section class="slide">
+ <div class="inner">
+  <h1>لا أترك زميلي وحده</h1>
+  <div class="visual"><img src="b60c861d1d37e311fcd4.jpg" alt="لا أترك زميلي وحده"></div>
+  <div class="body">إذا وقع زميلي أو احتاج إلى مساعدة، أمد يدي له بدل أن أتجاهله.</div>
+  <div class="question">ماذا تفعل عندما ترى زميلًا يحتاج إلى المساعدة؟</div>
+ </div>
+</section>
+
+<section class="slide">
+ <div class="inner">
+  <h1>أشارك ما أملك</h1>
+  <div class="visual"><img src="de5a1afdafdfae7d0c42.jpg" alt="أشارك ما أملك"></div>
+  <div class="body">المشاركة والتعاون تجعلنا أقرب إلى بعضنا وتقلل الخلاف بيننا.</div>
+  <div class="question">متى يمكنك أن تشارك شيئًا مع زميلك؟</div>
+ </div>
+</section>
+
+<section class="slide">
+ <div class="inner">
+  <h1>أدعوه ليكون معنا</h1>
+  <div class="visual"><img src="3887bcbdd86543f6d1ac.jpg" alt="أدعوه ليكون معنا"></div>
+  <div class="body">من التسامح ألا نعزل الآخرين، بل نتيح لهم فرصة المشاركة معنا.</div>
+  <div class="question">ماذا تقول لزميل يقف وحده بعيدًا عن المجموعة؟</div>
+ </div>
+</section>
+
+<section class="slide">
+ <div class="inner">
+  <h1>أحافظ على مكاننا معًا</h1>
+  <div class="visual"><img src="7e1f75de6d5d5315f1ff.jpg" alt="أحافظ على مكاننا معًا"></div>
+  <div class="body">عندما نتعاون في تنظيف الصف أو الساحة نتعلم المسؤولية والعمل بروح واحدة.</div>
+  <div class="question">كيف يمكن أن تتعاون مع زملائك في المحافظة على المدرسة؟</div>
+ </div>
+</section>
+
+<section class="slide">
+ <div class="inner">
+  <h1>أصلح ما بيني وبين الآخرين</h1>
+  <div class="visual"><img src="fdc347dac2526d14155c.jpg" alt="أصلح ما بيني وبين الآخرين"></div>
+  <div class="body">إذا حدث خلاف أحاول أن أبدأ خطوة للصلح بدل استمرار الزعل.</div>
+  <div class="question">ما أول خطوة يمكن أن تبدأ بها الصلح؟</div>
+ </div>
+</section>
+
+<section class="slide">
+ <div class="inner">
+  <h1>بالتسامح تصبح مدرستنا أجمل</h1>
+  <div class="visual"><img src="4d4accc2a55f0e544b14.jpg" alt="بالتسامح تصبح مدرستنا أجمل"></div>
+  <div class="body">الاحترام والعفو والتعاون تجعل المدرسة مكانًا أكثر أمانًا وراحة للجميع.</div>
+  <div class="question">ما سلوك التسامح الذي ستطبقه من اليوم؟</div>
+ </div>
+</section>
+
+<button id="prev" class="nav" type="button">السابق</button>
+<div id="count"></div>
+<button id="next" class="nav" type="button">التالي</button>
+</div>
+<script>
+(function(){
+ const slides=[...document.querySelectorAll('.slide')];
+ const prev=document.getElementById('prev'),next=document.getElementById('next');
+ const count=document.getElementById('count'),fs=document.getElementById('fs');
+ let index=0;
+ function show(n){
+  index=Math.max(0,Math.min(slides.length-1,n));
+  slides.forEach((s,i)=>s.classList.toggle('active',i===index));
+  prev.disabled=index===0; next.disabled=index===slides.length-1;
+  prev.style.opacity=index===0?'.35':'1'; next.style.opacity=index===slides.length-1?'.35':'1';
+  count.textContent='الشريحة '+(index+1)+' من '+slides.length;
+ }
+ prev.onclick=()=>show(index-1); next.onclick=()=>show(index+1);
+ document.addEventListener('keydown',e=>{
+  if(e.key==='ArrowLeft')show(index-1);
+  if(e.key==='ArrowRight'||e.key==='Enter'||e.key===' ')show(index+1);
+ });
+ fs.onclick=()=>{if(!document.fullscreenElement)document.documentElement.requestFullscreen?.();else document.exitFullscreen?.();};
+ show(0);
+})();
+</script>
+</body>
+</html>
