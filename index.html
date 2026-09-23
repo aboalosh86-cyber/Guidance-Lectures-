@@ -147,21 +147,66 @@ html,body,button,input,select,textarea,
 </style>
 
 
-<style id="mobile-viewer-fix">
-.fullscreen-icon{
-  width:44px!important;height:44px!important;padding:0!important;
-  display:grid!important;place-items:center!important;
-  background:#0d2b47!important;color:#fff!important;
-  border:2px solid #e6b84b!important;border-radius:12px!important;
-  font-size:24px!important;line-height:1!important;
-  box-shadow:0 4px 12px rgba(0,0,0,.28)!important;
+
+<style id="global-presentation-mode-fix">
+/* زر العرض الصغير والواضح */
+#fullBtn{
+  width:42px!important;
+  height:42px!important;
+  min-width:42px!important;
+  padding:0!important;
+  display:grid!important;
+  place-items:center!important;
+  background:#0d2b47!important;
+  color:#fff!important;
+  border:2px solid #e6b84b!important;
+  border-radius:12px!important;
+  box-shadow:0 4px 14px rgba(0,0,0,.30)!important;
+  font-size:23px!important;
+  line-height:1!important;
 }
+
+/* وضع العرض: لا نستخدم Fullscreen API حتى تبقى أزرار التالي/السابق تعمل على الموبايل */
+.viewer.presentation .viewerbar{
+  position:absolute!important;
+  top:8px!important;
+  left:8px!important;
+  width:42px!important;
+  height:42px!important;
+  padding:0!important;
+  gap:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+  z-index:1005!important;
+  pointer-events:none!important;
+}
+.viewer.presentation .viewer-title,
+.viewer.presentation #closeBtn{
+  display:none!important;
+}
+.viewer.presentation #fullBtn{
+  pointer-events:auto!important;
+  width:42px!important;
+  height:42px!important;
+}
+.viewer.presentation iframe{
+  width:100%!important;
+  height:100dvh!important;
+  min-height:100dvh!important;
+}
+
 @media(max-width:720px){
-  .viewerbar{height:50px!important;padding:4px 8px!important;gap:8px!important}
+  .viewerbar{
+    height:50px!important;
+    min-height:50px!important;
+    padding:4px 8px!important;
+    gap:8px!important;
+  }
   .viewer-title{font-size:15px!important}
-  .action{padding:7px 10px!important;font-size:13px!important}
-  .fullscreen-icon{width:40px!important;height:40px!important;font-size:22px!important}
-  iframe{height:calc(100dvh - 50px)!important}
+  #closeBtn{padding:7px 9px!important;font-size:13px!important}
+  #fullBtn{width:40px!important;height:40px!important;min-width:40px!important;font-size:22px!important}
+  #lectureFrame{height:calc(100dvh - 50px)!important}
+  .viewer.presentation #lectureFrame{height:100dvh!important}
 }
 </style>
 
@@ -485,13 +530,24 @@ function decodeUtf8Base64(b64){
 document.querySelectorAll('.cover-button').forEach(btn=>btn.addEventListener('click',()=>{
  viewerTitle.textContent=btn.dataset.title;
  const lectureUrl=new URL(lectures[btn.dataset.key],window.location.href);
- lectureUrl.searchParams.set('v','20260924-final4');
+ lectureUrl.searchParams.set('v','20260924-text-visible-v2');
  frame.removeAttribute('srcdoc');
  frame.src=lectureUrl.href;
  viewer.classList.add('open');
 }));
-document.getElementById('closeBtn').onclick=()=>{viewer.classList.remove('open');frame.srcdoc='';frame.src='about:blank';};
-document.getElementById('fullBtn').onclick=()=>{if(!document.fullscreenElement)viewer.requestFullscreen?.();else document.exitFullscreen?.();};
+document.getElementById('closeBtn').onclick=()=>{
+  viewer.classList.remove('presentation');
+  const btn=document.getElementById('fullBtn');
+  btn.textContent='⛶'; btn.title='وضع ملء الشاشة'; btn.setAttribute('aria-label',btn.title);
+  viewer.classList.remove('open'); frame.srcdoc=''; frame.src='about:blank';
+};
+document.getElementById('fullBtn').onclick=()=>{
+  const isPresentation=viewer.classList.toggle('presentation');
+  const btn=document.getElementById('fullBtn');
+  btn.textContent=isPresentation?'▣':'⛶';
+  btn.title=isPresentation?'الخروج من وضع العرض':'وضع ملء الشاشة';
+  btn.setAttribute('aria-label',btn.title);
+};
 
 /* تثبيت البرنامج */
 let deferredInstallPrompt=null;
@@ -543,7 +599,7 @@ installBtn?.addEventListener('click',async()=>{
 
 /* تسجيل عامل الخدمة عند الاستضافة الآمنة */
 if('serviceWorker' in navigator && location.protocol!=='file:'){
-  window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js?v=20260924-final4',{updateViaCache:'none'}).then(r=>r.update()).catch(()=>{}));
+  window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js?v=20260924-global-mobile-v1',{updateViaCache:'none'}).then(r=>r.update()).catch(()=>{}));
 }
 </script>
 </body>
