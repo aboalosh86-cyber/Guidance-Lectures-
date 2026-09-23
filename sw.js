@@ -1,4 +1,4 @@
-const CACHE_NAME='guided-lectures-cairo-icon-v3';
+const CACHE_NAME='guided-lectures-final-v4';
 const CORE=['./','./index.html','./manifest.webmanifest','./icon-180.png','./icon-192.png','./icon-512.png'];
 self.addEventListener('install',event=>{
   self.skipWaiting();
