@@ -1,0 +1,527 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0d2b47">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Guidance Lectures">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icon-192.png">
+<title>Guidance Lectures</title>
+<style>
+:root{--navy:#0d2b47;--navy2:#123d61;--gold:#e6b84b;--ink:#10212d}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;background:linear-gradient(180deg,#f9fcfe,#f2f8fb);font-family:"Tajawal",Tahoma,Arial,sans-serif;color:var(--ink)}
+.hero{background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff;padding:30px 24px 26px;box-shadow:0 9px 30px rgba(13,43,71,.16)}
+.hero-inner{max-width:1320px;margin:auto}
+.brand{display:flex;align-items:center;gap:14px}
+.brand-mark{width:56px;height:56px;border-radius:19px;background:linear-gradient(145deg,#f1ca69,#dca83a);color:var(--navy);display:grid;place-items:center;font-family:"Cairo";font-weight:900;font-size:25px;box-shadow:inset 0 2px 3px rgba(255,255,255,.7),0 8px 22px rgba(0,0,0,.16)}
+.hero h1{font-family:"Cairo";font-weight:900;font-size:clamp(30px,4vw,52px);margin:0}
+.hero p{margin:5px 0 0;font-size:clamp(16px,1.7vw,22px);font-weight:700;color:#e9f4fa}
+.meta{margin-top:14px;font-family:"Cairo";font-size:14px;color:#d9e8f1}
+.main{max-width:1320px;margin:auto;padding:28px 23px 42px}
+.section-head{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:24px}
+.section-head h2{font-family:"Cairo";font-size:clamp(23px,2.6vw,34px);margin:0;color:var(--navy);font-weight:900}
+.count{background:#fff;color:var(--navy);border:1px solid #d5e5ed;padding:8px 13px;border-radius:999px;font-family:"Cairo";font-weight:800;font-size:13px;box-shadow:0 3px 12px rgba(13,43,71,.06)}
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px 24px}
+.lecture-tile{text-align:center}
+.cover-button{position:relative;display:block;width:100%;aspect-ratio:1/1;border:0;padding:0;overflow:hidden;border-radius:36px;background:#fff;cursor:pointer;box-shadow:0 14px 34px rgba(13,43,71,.16),0 3px 8px rgba(13,43,71,.08);transition:transform .2s ease,box-shadow .2s ease}
+.cover-button img{width:100%;height:100%;display:block;object-fit:cover}
+.cover-button::after{content:"";position:absolute;inset:0;border-radius:inherit;border:1px solid rgba(255,255,255,.70);box-shadow:inset 0 2px 2px rgba(255,255,255,.28),inset 0 -24px 36px rgba(0,0,0,.05);pointer-events:none}
+.glass{position:absolute;left:0;right:0;top:0;height:34%;background:linear-gradient(180deg,rgba(255,255,255,.16),rgba(255,255,255,0));pointer-events:none}
+.badge{position:absolute;z-index:3;top:14px;left:14px;min-width:39px;height:39px;padding:0 9px;border-radius:14px;background:rgba(8,37,63,.88);color:#f4ca68;border:1px solid rgba(255,255,255,.6);display:grid;place-items:center;font-family:"Cairo";font-weight:900;font-size:13px;box-shadow:0 5px 14px rgba(0,0,0,.18)}
+.cover-button:hover{transform:translateY(-6px) scale(1.012);box-shadow:0 20px 44px rgba(13,43,71,.21),0 4px 10px rgba(13,43,71,.10)}
+.lecture-tile h3{font-family:"Cairo";font-size:20px;line-height:1.4;margin:13px 5px 0;color:var(--navy);font-weight:900}
+.viewer{position:fixed;inset:0;background:#edf2f5;z-index:100;display:none;flex-direction:column}
+.viewer.open{display:flex}
+.viewerbar{height:60px;background:var(--navy);display:flex;align-items:center;gap:12px;padding:8px 12px;color:#fff;box-shadow:0 3px 16px rgba(0,0,0,.18)}
+.viewer-title{font-family:"Cairo";font-weight:900;font-size:18px;flex:1;text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.action{border:0;background:#fff;color:var(--navy);border-radius:10px;padding:9px 14px;font-family:"Cairo";font-weight:800;cursor:pointer}
+.action.gold{background:var(--gold)}
+iframe{border:0;width:100%;height:calc(100vh - 60px);background:#fff}
+.footer{text-align:center;margin-top:34px;padding:12px;color:#70808a;font-family:"Cairo";font-size:13px}
+@media(max-width:1100px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:760px){.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 16px}.cover-button{border-radius:30px}}
+@media(max-width:480px){.hero{padding:22px 14px 20px}.main{padding:20px 12px 30px}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 12px}.lecture-tile h3{font-size:16px;margin-top:10px}.cover-button{border-radius:25px}.badge{top:10px;left:10px;min-width:33px;height:33px;border-radius:11px;font-size:11px}}
+
+/* الواجهة المحسنة */
+.hero{padding:22px 24px 21px}
+.hero-row{max-width:1320px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:22px}
+.brand{display:none}
+.brand-text h1{font-family:"Cairo",Tahoma,sans-serif;font-weight:900;font-size:clamp(29px,3.6vw,48px);line-height:1.12;margin:0;color:#fff;letter-spacing:-.4px}
+.brand-text p{margin:6px 0 0;color:#e5f0f7;font-size:clamp(15px,1.5vw,20px);font-weight:700}.author-line{color:#f2ca68;font-weight:900}.brand-text p small{font-size:.72em;color:#d6e7f0}
+.top-nav{display:flex;align-items:center;gap:9px;padding:7px;border-radius:18px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);box-shadow:inset 0 1px 0 rgba(255,255,255,.08)}
+.nav-pill{font-family:"Cairo",Tahoma,sans-serif;text-decoration:none;color:#edf6fb;font-weight:800;font-size:14px;padding:10px 14px;border-radius:12px;transition:.2s ease;white-space:nowrap}
+.nav-pill:hover,.nav-pill:focus{background:rgba(255,255,255,.13);outline:none}
+.nav-pill.active{background:linear-gradient(145deg,#f2ca68,#dea83b);color:#0d2b47;box-shadow:0 5px 14px rgba(0,0,0,.16)}
+.section-head{scroll-margin-top:14px;border-bottom:1px solid #dbe8ee;padding-bottom:13px}
+.section-head h2{position:relative;padding-right:18px}
+.section-head h2::before{content:"";position:absolute;right:0;top:16%;bottom:16%;width:6px;border-radius:99px;background:linear-gradient(#eec75f,#dba535)}
+.count{display:none!important}
+.app-tools{display:grid;grid-template-columns:1fr;gap:14px;max-width:470px;margin:42px auto 0;padding:0 8px}
+.tool-btn{appearance:none;border:1px solid #d5e3eb;background:#fff;border-radius:20px;padding:14px 16px;display:flex;align-items:center;gap:13px;text-align:right;cursor:pointer;box-shadow:0 8px 24px rgba(13,43,71,.09);transition:transform .18s ease,box-shadow .18s ease;font-family:"Cairo",Tahoma,sans-serif;color:#0d2b47}
+.tool-btn:hover{transform:translateY(-3px);box-shadow:0 13px 28px rgba(13,43,71,.14)}
+.tool-btn strong{display:block;font-size:16px;font-weight:900}
+.tool-btn small{display:block;color:#677b88;font-family:"Tajawal",Tahoma,sans-serif;font-size:12px;font-weight:700;margin-top:2px}
+.tool-icon{width:44px;height:44px;flex:0 0 44px;border-radius:14px;display:grid;place-items:center;font-size:24px;font-weight:900;background:#eff6fa;color:#0d2b47}
+.install-btn .tool-icon{background:linear-gradient(145deg,#f5d57f,#e5b345)}
+.designer-credit{scroll-margin-top:14px;text-align:center;margin:38px auto 20px;padding:27px 18px 24px;max-width:920px;border-top:1px solid #d9e6ed;position:relative;color:#0d2b47}
+.designer-credit::before{content:"";position:absolute;top:-2px;left:50%;transform:translateX(-50%);width:120px;height:3px;border-radius:99px;background:linear-gradient(90deg,#d9a331,#f2ce71,#d9a331)}
+.credit-kicker{font-family:"Cairo",Tahoma,sans-serif;color:#a8791e;font-weight:900;font-size:17px;letter-spacing:.2px;margin-bottom:3px}
+.credit-main{font-family:"Cairo",Tahoma,sans-serif;font-weight:900;font-size:clamp(22px,2.6vw,34px);line-height:1.35;text-shadow:0 1px 0 #fff}
+.credit-school{font-family:"Tajawal",Tahoma,sans-serif;font-weight:800;font-size:16px;color:#607581;margin-top:5px}
+.footer{display:none!important}
+.install-btn.is-hidden{display:none!important}
+.system-modal{position:fixed;inset:0;z-index:500;display:none;align-items:center;justify-content:center;padding:20px;background:rgba(5,24,40,.55);backdrop-filter:blur(7px)}
+.system-modal.open{display:flex}
+.system-card{width:min(92vw,520px);background:#fff;border-radius:24px;box-shadow:0 24px 80px rgba(0,0,0,.28);padding:22px;color:#12304b}
+.system-card h3{font-family:"Cairo";font-size:23px;margin:0 0 8px}
+.system-card p{font-family:"Tajawal";font-size:16px;line-height:1.75;margin:0;color:#425b6b}
+.system-card .steps{margin:13px 0 0;padding:12px 16px;background:#f3f8fb;border-radius:15px;font-weight:700;line-height:1.8}
+.system-card .modal-close{margin-top:16px;border:0;background:#0d2b47;color:#fff;border-radius:12px;padding:10px 18px;font-family:"Cairo";font-weight:800;cursor:pointer}
+@media(max-width:850px){.hero-row{flex-direction:column;align-items:stretch}.brand-text{text-align:center}}
+@media(max-width:560px){.app-tools{grid-template-columns:1fr}.tool-btn{border-radius:17px}.credit-main{font-size:22px}}
+
+
+/* اللمسة الفاخرة - تصميم قصي زهير سعيد */
+:root{--navy:#071b31;--navy2:#103b5c;--gold:#d7a63b;--gold2:#f4d27a;--paper:#f7f4ed;--ink:#14293a;--line:rgba(20,65,91,.14)}
+html,body{background:radial-gradient(circle at 10% 0%,#fffdf8 0,#f7f4ed 34%,#eef4f5 100%);font-family:"Noto Sans Arabic","Noto Sans Arabic SemBd",Tahoma,Arial,sans-serif}
+.hero{position:relative;overflow:hidden;background:linear-gradient(116deg,#06172a 0%,#0b2b48 54%,#123e5c 100%);padding:31px 24px 32px;box-shadow:0 16px 42px rgba(7,27,49,.24);isolation:isolate}
+.hero::before{content:"";position:absolute;inset:-140px -30px auto auto;width:470px;height:470px;border:1px solid rgba(244,210,122,.18);border-radius:50%;box-shadow:0 0 0 28px rgba(244,210,122,.035),0 0 0 57px rgba(244,210,122,.025);transform:rotate(18deg);z-index:-1}
+.hero::after{content:"";position:absolute;left:-70px;bottom:-110px;width:300px;height:220px;background:radial-gradient(ellipse,rgba(215,166,59,.18),transparent 70%);z-index:-1}
+.hero-row{max-width:1320px;min-height:125px;align-items:center}
+.brand-text{position:relative;padding-right:22px}
+.brand-text::before{content:"";position:absolute;right:0;top:2px;width:5px;height:86px;border-radius:9px;background:linear-gradient(180deg,var(--gold2),var(--gold));box-shadow:0 0 20px rgba(244,210,122,.32)}
+.hero-kicker{display:inline-flex;align-items:center;gap:9px;color:var(--gold2);font-size:13px;font-weight:800;letter-spacing:.2px;margin-bottom:10px}
+.hero-kicker::before{content:"✦";font-family:serif;color:var(--gold);font-size:18px}
+.brand-text h1{font-family:"Cairo",Tahoma,sans-serif;letter-spacing:-1.2px;text-shadow:0 3px 18px rgba(0,0,0,.25)}
+.brand-text p{font-family:"Tajawal",Tahoma,sans-serif;line-height:1.75;color:#dceaf1}
+.author-line{display:inline-block;color:var(--gold2);font-size:.88em;letter-spacing:.1px}
+.main{max-width:1320px;padding:39px 23px 56px}
+.section-head{border-bottom:0;padding:0;margin-bottom:26px;align-items:end}
+.section-head>div:first-child{position:relative}
+.section-kicker{color:#a47925;font-size:12px;font-weight:800;letter-spacing:.7px;margin:0 0 3px 18px}
+.section-head h2{font-family:"Cairo",Tahoma,sans-serif;color:var(--navy);font-size:clamp(23px,2.6vw,34px);letter-spacing:-.5px;padding-right:18px}
+.section-head h2::before{width:5px;background:linear-gradient(#f4d27a,#bd8422);box-shadow:0 0 11px rgba(215,166,59,.28)}
+.grid{gap:30px 23px}
+.lecture-tile{position:relative}
+.cover-button{border-radius:26px;background:#fff;border:1px solid rgba(215,166,59,.19);box-shadow:0 16px 32px rgba(12,43,67,.13),0 2px 0 rgba(255,255,255,.8) inset;transition:transform .24s cubic-bezier(.23,1,.32,1),box-shadow .24s ease,border-color .24s ease}
+.cover-button::after{border:1px solid rgba(255,255,255,.78);box-shadow:inset 0 2px 0 rgba(255,255,255,.35),inset 0 -34px 55px rgba(6,27,49,.08)}
+.cover-button:hover{transform:translateY(-8px) scale(1.015);border-color:rgba(215,166,59,.65);box-shadow:0 24px 42px rgba(12,43,67,.21),0 0 0 4px rgba(215,166,59,.08)}
+.badge{top:13px;left:13px;background:rgba(7,27,49,.91);color:var(--gold2);border-color:rgba(244,210,122,.48);font-family:"Tajawal",Tahoma,sans-serif;box-shadow:0 7px 18px rgba(0,0,0,.25)}
+.lecture-tile h3{font-family:"Cairo",Tahoma,sans-serif;font-size:17px;line-height:1.55;color:#17364d;margin:14px 4px 0}
+.lecture-tile h3::after{content:"";display:block;width:24px;height:2px;border-radius:4px;background:var(--gold);margin:8px auto 0;opacity:.7}
+.app-tools{max-width:520px;margin:50px auto 0}
+.tool-btn{position:relative;overflow:hidden;border:1px solid rgba(215,166,59,.34);background:linear-gradient(135deg,#fffdf8,#f4f8f8);border-radius:18px;padding:16px 19px;box-shadow:0 14px 30px rgba(13,43,71,.11)}
+.tool-btn::after{content:"";position:absolute;inset:0 auto 0 0;width:4px;background:linear-gradient(var(--gold2),var(--gold));opacity:.9}
+.tool-btn:hover{transform:translateY(-4px);box-shadow:0 18px 35px rgba(13,43,71,.16);border-color:rgba(215,166,59,.65)}
+.tool-icon{width:46px;height:46px;border-radius:14px;background:#0c2d4a!important;color:var(--gold2);font-family:serif;font-size:26px;box-shadow:0 6px 14px rgba(7,27,49,.18)}
+.tool-btn strong{font-family:"Cairo",Tahoma,sans-serif;font-size:15px}
+.tool-btn small{font-family:"Tajawal",Tahoma,sans-serif}
+.designer-credit{margin:58px auto 10px;padding:31px 18px 26px;color:var(--navy);background:rgba(255,255,255,.38);border:1px solid rgba(215,166,59,.15);border-radius:22px;box-shadow:0 12px 32px rgba(13,43,71,.05)}
+.designer-credit::before{top:-2px;width:150px;height:4px}
+.credit-kicker{font-family:"Tajawal",Tahoma,sans-serif;color:#a47925;font-size:14px}
+.credit-main{font-family:"Cairo",Tahoma,sans-serif;font-size:clamp(20px,2.4vw,31px);letter-spacing:-.4px}
+.credit-school{font-family:"Tajawal",Tahoma,sans-serif}
+.viewerbar{height:64px;background:linear-gradient(100deg,#06172a,#103b5c);border-bottom:2px solid var(--gold);padding:9px 14px}
+.action{font-family:"Tajawal",Tahoma,sans-serif;border-radius:11px}
+.action.gold{background:linear-gradient(145deg,#f4d27a,#d7a63b);color:#071b31}
+.system-card{border:1px solid rgba(215,166,59,.35);box-shadow:0 25px 90px rgba(4,20,36,.36)}
+.system-card h3{font-family:"Cairo",Tahoma,sans-serif}
+.system-card .modal-close{background:#0b2b48;font-family:"Tajawal",Tahoma,sans-serif}
+@media(max-width:560px){.hero{padding:26px 17px 28px}.hero-row{min-height:130px}.brand-text{padding-right:17px}.brand-text::before{height:94px}.brand-text h1{font-size:28px;letter-spacing:-.9px}.hero-kicker{font-size:11px}.main{padding:30px 13px 42px}.grid{gap:21px 12px}.cover-button{border-radius:22px}.lecture-tile h3{font-size:14px;margin-top:10px}.section-kicker{font-size:10px}.section-head h2{font-size:23px}.designer-credit{border-radius:18px;padding:25px 12px 21px}}
+</style>
+<style id="offline-classic-fonts">
+@font-face{font-family:Cairo;font-style:normal;font-weight:600;src:url("./fonts/Cairo-600.ttf") format("truetype");font-display:swap}
+@font-face{font-family:Cairo;font-style:normal;font-weight:700;src:url("./fonts/Cairo-700.ttf") format("truetype");font-display:swap}
+@font-face{font-family:Cairo;font-style:normal;font-weight:800;src:url("./fonts/Cairo-800.ttf") format("truetype");font-display:swap}
+@font-face{font-family:Cairo;font-style:normal;font-weight:900;src:url("./fonts/Cairo-900.ttf") format("truetype");font-display:swap}
+@font-face{font-family:Tajawal;font-style:normal;font-weight:500;src:url("./fonts/Tajawal-500.ttf") format("truetype");font-display:swap}
+@font-face{font-family:Tajawal;font-style:normal;font-weight:700;src:url("./fonts/Tajawal-700.ttf") format("truetype");font-display:swap}
+@font-face{font-family:Tajawal;font-style:normal;font-weight:800;src:url("./fonts/Tajawal-800.ttf") format("truetype");font-display:swap}
+</style>
+</head>
+<body>
+<header class="hero" id="top">
+  <div class="hero-inner">
+    <div class="hero-row">
+      <div class="brand-text">
+        <div class="hero-kicker">مكتبة المرشد التربوي</div>
+        <h1>Guidance Lectures</h1>
+        <p>مكتبة تفاعلية<br><span class="author-line">قصي زهير سعيد / مرشد تربوي</span><br><small>للعرض والمناقشة داخل الصف</small></p>
+      </div>
+    </div>
+  </div>
+</header>
+<main class="main">
+  <div class="section-head" id="library">
+    <div><h2>المكتبة الإرشادية</h2></div>
+  </div>
+  <div class="grid">
+    <div class="lecture-tile">
+      <button class="cover-button" data-key="01" data-title="التنمر المدرسي" aria-label="فتح محاضرة التنمر المدرسي">
+        <img src="assets/aa9e1b1b50389cbca928.jpg" alt="التنمر المدرسي">
+        <span class="glass"></span>
+        <span class="badge">01</span>
+      </button>
+      <h3>التنمر المدرسي</h3>
+    </div>
+    
+    <div class="lecture-tile">
+      <button class="cover-button" data-key="02" data-title="الحقوق والواجبات" aria-label="فتح محاضرة الحقوق والواجبات">
+        <img src="assets/b7c6644e9e883f9897e8.jpg" alt="الحقوق والواجبات">
+        <span class="glass"></span>
+        <span class="badge">02</span>
+      </button>
+      <h3>الحقوق والواجبات</h3>
+    </div>
+    
+    <div class="lecture-tile">
+      <button class="cover-button" data-key="03" data-title="حب الوطن والمواطنة" aria-label="فتح محاضرة حب الوطن والمواطنة">
+        <img src="assets/c604dda11716f4be8ffe.jpg" alt="حب الوطن والمواطنة">
+        <span class="glass"></span>
+        <span class="badge">03</span>
+      </button>
+      <h3>حب الوطن والمواطنة</h3>
+    </div>
+    
+    <div class="lecture-tile">
+      <button class="cover-button" data-key="04" data-title="الاستعداد للامتحانات" aria-label="فتح محاضرة الاستعداد للامتحانات">
+        <img src="assets/3752a2e65d891929ee53.jpg" alt="الاستعداد للامتحانات">
+        <span class="glass"></span>
+        <span class="badge">04</span>
+      </button>
+      <h3>الاستعداد للامتحانات</h3>
+    </div>
+    
+    <div class="lecture-tile">
+      <button class="cover-button" data-key="05" data-title="الصدق" aria-label="فتح محاضرة الصدق">
+        <img src="assets/5fa80462ad0530b3a7a2.jpg" alt="الصدق">
+        <span class="glass"></span>
+        <span class="badge">05</span>
+      </button>
+      <h3>الصدق</h3>
+    </div>
+    
+    <div class="lecture-tile">
+      <button class="cover-button" data-key="06" data-title="التسامح" aria-label="فتح محاضرة التسامح">
+        <img src="assets/5905ec0ad549d5ba22b7.jpg" alt="التسامح">
+        <span class="glass"></span>
+        <span class="badge">06</span>
+      </button>
+      <h3>التسامح</h3>
+    </div>
+    
+    <div class="lecture-tile">
+      <button class="cover-button" data-key="07" data-title="الكذب" aria-label="فتح محاضرة الكذب">
+        <img src="assets/8a0b2a0f9496f352d980.jpg" alt="الكذب">
+        <span class="glass"></span>
+        <span class="badge">07</span>
+      </button>
+      <h3>الكذب</h3>
+    </div>
+    
+    <div class="lecture-tile">
+      <button class="cover-button" data-key="08" data-title="برّ الوالدين" aria-label="فتح محاضرة برّ الوالدين">
+        <img src="assets/7f0a645416a995a65386.jpg" alt="برّ الوالدين">
+        <span class="glass"></span>
+        <span class="badge">08</span>
+      </button>
+      <h3>برّ الوالدين</h3>
+    </div>
+    
+    <div class="lecture-tile">
+      <button class="cover-button" data-key="09" data-title="النظافة الشخصية" aria-label="فتح محاضرة النظافة الشخصية">
+        <img src="assets/7ea0386a85e894978558.jpg" alt="النظافة الشخصية">
+        <span class="glass"></span>
+        <span class="badge">09</span>
+      </button>
+      <h3>النظافة الشخصية</h3>
+    </div>
+    
+    <div class="lecture-tile">
+      <button class="cover-button" data-key="10" data-title="الغش" aria-label="فتح محاضرة الغش">
+        <img src="assets/317abb6e8ac47b85aac1.jpg" alt="الغش">
+        <span class="glass"></span>
+        <span class="badge">10</span>
+      </button>
+      <h3>الغش</h3>
+    </div>
+    
+    <div class="lecture-tile">
+      <button class="cover-button" data-key="11" data-title="الصلاة" aria-label="فتح محاضرة الصلاة">
+        <img src="assets/196fe2e37b2d3e2b0113.jpg" alt="الصلاة">
+        <span class="glass"></span>
+        <span class="badge">11</span>
+      </button>
+      <h3>الصلاة</h3>
+    </div>
+    
+    <div class="lecture-tile">
+      <button class="cover-button" data-key="12" data-title="الصوم" aria-label="فتح محاضرة الصوم">
+        <img src="assets/3ec2014f56a732acf943.jpg" alt="الصوم">
+        <span class="glass"></span>
+        <span class="badge">12</span>
+      </button>
+      <h3>الصوم</h3>
+    </div>
+    
+    <div class="lecture-tile">
+      <button class="cover-button" data-key="13" data-title="السلوك العدواني" aria-label="فتح محاضرة السلوك العدواني">
+        <img src="assets/f0e4f40e8fd8ef60d399.jpg" alt="السلوك العدواني">
+        <span class="glass"></span>
+        <span class="badge">13</span>
+      </button>
+      <h3>السلوك العدواني</h3>
+    </div>
+    
+    <div class="lecture-tile">
+      <button class="cover-button" data-key="14" data-title="تنظيم الوقت" aria-label="فتح محاضرة تنظيم الوقت">
+        <img src="assets/d5e554f296754506216f.jpg" alt="تنظيم الوقت">
+        <span class="glass"></span>
+        <span class="badge">14</span>
+      </button>
+      <h3>تنظيم الوقت</h3>
+    </div>
+    
+    <div class="lecture-tile">
+      <button class="cover-button" data-key="15" data-title="السرقة" aria-label="فتح محاضرة السرقة">
+        <img src="assets/651f19a39a48334c8ba0.jpg" alt="السرقة">
+        <span class="glass"></span>
+        <span class="badge">15</span>
+      </button>
+      <h3>السرقة</h3>
+    </div>
+    
+    <div class="lecture-tile">
+      <button class="cover-button" data-key="16" data-title="العناد" aria-label="فتح محاضرة العناد" style="background-image:url('assets/8befd2d2484367c4cd93.jpg'); background-size:cover; background-position:center;">
+        <img style="object-fit:contain; object-position:center bottom;" src="assets/8befd2d2484367c4cd93.jpg" alt="العناد">
+        <span class="glass"></span>
+        <span class="badge">16</span>
+      </button>
+      <h3>العناد</h3>
+    </div>
+    <div class="lecture-tile">
+      <button class="cover-button" data-key="17" data-title="التعاون" aria-label="فتح محاضرة التعاون">
+        <img src="assets/59829d3d7bd91fa8029a.jpg" alt="التعاون" style="object-position:center top">
+        <span class="glass"></span>
+        <span class="badge">17</span>
+      </button>
+      <h3>التعاون</h3>
+    </div>
+
+    <div class="lecture-tile">
+      <button class="cover-button" data-key="18" data-title="الثقة بالنفس" aria-label="فتح محاضرة الثقة بالنفس">
+        <img src="assets/e2d384c78db5678859ac.jpg" alt="الثقة بالنفس" style="object-position:center top">
+        <span class="glass"></span>
+        <span class="badge">18</span>
+      </button>
+      <h3>الثقة بالنفس</h3>
+    </div>
+
+    <div class="lecture-tile">
+      <button class="cover-button" data-key="19" data-title="الانضباط المدرسي" aria-label="فتح محاضرة الانضباط المدرسي">
+        <img src="assets/a62341cf36f6bc795f2b.jpg" alt="الانضباط المدرسي" style="object-position:center center">
+        <span class="glass"></span>
+        <span class="badge">19</span>
+      </button>
+      <h3>الانضباط المدرسي</h3>
+    </div>
+
+    <div class="lecture-tile">
+      <button class="cover-button" data-key="20" data-title="الحفاظ على ممتلكات المدرسة" aria-label="فتح محاضرة الحفاظ على ممتلكات المدرسة">
+        <img src="assets/70c01c68712b90ef7547.jpg" alt="الحفاظ على ممتلكات المدرسة" style="object-position:center top">
+        <span class="glass"></span>
+        <span class="badge">20</span>
+      </button>
+      <h3>الحفاظ على ممتلكات المدرسة</h3>
+    </div>
+
+    <div class="lecture-tile">
+      <button class="cover-button" data-key="21" data-title="الاحترام" aria-label="فتح محاضرة الاحترام">
+        <img src="assets/304e13fab0089d64bbcd.jpg" alt="الاحترام" style="object-position:center center">
+        <span class="glass"></span>
+        <span class="badge">21</span>
+      </button>
+      <h3>الاحترام</h3>
+    </div>
+
+    <div class="lecture-tile">
+      <button class="cover-button" data-key="22" data-title="إهمال الواجبات المدرسية" aria-label="فتح محاضرة إهمال الواجبات المدرسية">
+        <img src="assets/5ab0dff6cef5e362d207.jpg" alt="إهمال الواجبات المدرسية" style="object-position:center center">
+        <span class="glass"></span>
+        <span class="badge">22</span>
+      </button>
+      <h3>إهمال الواجبات المدرسية</h3>
+    </div>
+
+    <div class="lecture-tile">
+      <button class="cover-button" data-key="23" data-title="الغياب المتكرر" aria-label="فتح محاضرة الغياب المتكرر">
+        <img src="assets/0051d115f7eb734c6689.jpg" alt="الغياب المتكرر" style="object-position:center center">
+        <span class="glass"></span>
+        <span class="badge">23</span>
+      </button>
+      <h3>الغياب المتكرر</h3>
+    </div>
+
+    <div class="lecture-tile">
+      <button class="cover-button" data-key="24" data-title="الألفاظ النابية" aria-label="فتح محاضرة الألفاظ النابية">
+        <img src="assets/982ac642e137de971e13.jpg" alt="الألفاظ النابية" style="object-position:center top">
+        <span class="glass"></span>
+        <span class="badge">24</span>
+      </button>
+      <h3>الألفاظ النابية</h3>
+    </div>
+
+    <div class="lecture-tile">
+      <button class="cover-button" data-key="25" data-title="التأخير الصباحي" aria-label="فتح محاضرة التأخير الصباحي">
+        <img src="assets/0690edede0b896c902d4.jpg" alt="التأخير الصباحي" style="object-position:center center">
+        <span class="glass"></span>
+        <span class="badge">25</span>
+      </button>
+      <h3>التأخير الصباحي</h3>
+    </div>
+
+    <div class="lecture-tile">
+      <button class="cover-button" data-key="26" data-title="الأمانة" aria-label="فتح محاضرة الأمانة">
+        <img src="assets/ff7dfe30db3cabdcd357.png" alt="الأمانة" style="object-position:center top">
+        <span class="glass"></span>
+        <span class="badge">26</span>
+      </button>
+      <h3>الأمانة</h3>
+    </div>
+    <div class="lecture-tile">
+      <button class="cover-button" data-key="27" data-title="اختيار الصديق (الصداقة)" aria-label="فتح محاضرة اختيار الصديق (الصداقة)">
+        <img src="assets/5a1ca4cb6fe8433ca5fc.png" alt="اختيار الصديق (الصداقة)" style="object-position:center center">
+        <span class="glass"></span>
+        <span class="badge">27</span>
+      </button>
+      <h3>اختيار الصديق (الصداقة)</h3>
+    </div>
+    <div class="lecture-tile">
+      <button class="cover-button" data-key="28" data-title="الأثر الطيب" aria-label="فتح محاضرة الأثر الطيب">
+        <img src="assets/35b545d260ccb33d919b.png" alt="الأثر الطيب" style="object-position:center center">
+        <span class="glass"></span>
+        <span class="badge">28</span>
+      </button>
+      <h3>الأثر الطيب</h3>
+    </div>
+    <div class="lecture-tile">
+      <button class="cover-button" data-key="29" data-title="أهمية الفطور الصباحي والتغذية الصحية" aria-label="فتح محاضرة أهمية الفطور الصباحي والتغذية الصحية">
+        <img src="assets/a0db8187f49f77b772ce.png" alt="أهمية الفطور الصباحي والتغذية الصحية" style="object-position:center top">
+        <span class="glass"></span>
+        <span class="badge">29</span>
+      </button>
+      <h3>أهمية الفطور الصباحي والتغذية الصحية</h3>
+    </div>
+    <div class="lecture-tile">
+      <button class="cover-button" data-key="30" data-title="الوقاية من الأمراض" aria-label="فتح محاضرة الوقاية من الأمراض">
+        <img src="assets/329fbd4ad66106165897.png" alt="الوقاية من الأمراض" style="object-position:center center">
+        <span class="glass"></span>
+        <span class="badge">30</span>
+      </button>
+      <h3>الوقاية من الأمراض</h3>
+    </div>
+    </div>
+
+
+  <footer class="designer-credit" id="about">
+    <div class="credit-kicker">إعداد وتصميم</div>
+    <div class="credit-main">المرشد التربوي قصي زهير سعيد</div>
+    <div class="credit-school">مدرسة سعد الابتدائية</div>
+  </footer>
+</main>
+<div class="viewer" id="viewer">
+  <div class="viewerbar">
+    <button class="action" id="closeBtn">✕ رجوع</button>
+    <div class="viewer-title" id="viewerTitle">المحاضرة</div>
+    <button class="action gold" id="fullBtn">ملء الشاشة</button>
+  </div>
+  <iframe id="lectureFrame" title="المحاضرة"></iframe>
+</div>
+<div class="system-modal" id="systemModal" role="dialog" aria-modal="true" aria-labelledby="systemModalTitle">
+  <div class="system-card">
+    <h3 id="systemModalTitle">تثبيت البرنامج</h3>
+    <p id="systemModalText"></p>
+    <div class="steps" id="systemModalSteps"></div>
+    <button class="modal-close" id="modalCloseBtn" type="button">حسنًا</button>
+  </div>
+</div>
+<script>
+const lectures={"01":"lectures/01.html","02":"lectures/02.html","03":"lectures/03.html","04":"lectures/04.html","05":"lectures/05.html","06":"lectures/06.html","07":"lectures/07.html","08":"lectures/08.html","09":"lectures/09.html","10":"lectures/10.html","11":"lectures/11.html","12":"lectures/12.html","13":"lectures/13.html","14":"lectures/14.html","15":"lectures/15.html","16":"lectures/16.html","17":"lectures/17.html","18":"lectures/18.html","19":"lectures/19.html","20":"lectures/20.html","21":"lectures/21.html","22":"lectures/22.html","23":"lectures/23.html","24":"lectures/24.html","25":"lectures/25.html","26":"lectures/26.html","27":"lectures/27.html","28":"lectures/28.html","29":"lectures/29.html","30":"lectures/30.html"};
+const viewer=document.getElementById('viewer');
+const frame=document.getElementById('lectureFrame');
+const viewerTitle=document.getElementById('viewerTitle');
+function decodeUtf8Base64(b64){
+ const binary=atob(b64),bytes=new Uint8Array(binary.length);
+ for(let i=0;i<binary.length;i++)bytes[i]=binary.charCodeAt(i);
+ return new TextDecoder('utf-8').decode(bytes);
+}
+document.querySelectorAll('.cover-button').forEach(btn=>btn.addEventListener('click',()=>{
+ viewerTitle.textContent=btn.dataset.title;
+ frame.src='about:blank';
+ frame.srcdoc=''; frame.src=lectures[btn.dataset.key];
+ viewer.classList.add('open');
+}));
+document.getElementById('closeBtn').onclick=()=>{viewer.classList.remove('open');frame.srcdoc='';frame.src='about:blank';};
+document.getElementById('fullBtn').onclick=()=>{if(!document.fullscreenElement)viewer.requestFullscreen?.();else document.exitFullscreen?.();};
+
+/* تثبيت البرنامج */
+let deferredInstallPrompt=null;
+const installBtn=document.getElementById('installBtn');
+const isStandalone=()=>window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone===true;
+function syncInstallButton(){
+  if(isStandalone()) installBtn?.classList.add('is-hidden');
+}
+window.addEventListener('beforeinstallprompt',(e)=>{
+  e.preventDefault();
+  deferredInstallPrompt=e;
+  syncInstallButton();
+});
+window.addEventListener('appinstalled',()=>{
+  deferredInstallPrompt=null;
+  installBtn?.classList.add('is-hidden');
+});
+syncInstallButton();
+
+const systemModal=document.getElementById('systemModal');
+const systemModalText=document.getElementById('systemModalText');
+const systemModalSteps=document.getElementById('systemModalSteps');
+const modalCloseBtn=document.getElementById('modalCloseBtn');
+function openSystemModal(text,steps){
+  systemModalText.textContent=text;
+  systemModalSteps.innerHTML=steps;
+  systemModal.classList.add('open');
+}
+modalCloseBtn.onclick=()=>systemModal.classList.remove('open');
+systemModal.addEventListener('click',e=>{if(e.target===systemModal)systemModal.classList.remove('open');});
+
+installBtn?.addEventListener('click',async()=>{
+  if(isStandalone()){ installBtn.classList.add('is-hidden'); return; }
+  if(deferredInstallPrompt){
+    deferredInstallPrompt.prompt();
+    await deferredInstallPrompt.userChoice;
+    deferredInstallPrompt=null;
+    syncInstallButton();
+    return;
+  }
+  const isiOS=/iPad|iPhone|iPod/.test(navigator.userAgent);
+  if(isiOS){
+    openSystemModal('على iPhone يتم التثبيت من قائمة المشاركة في Safari.','افتح <b>مشاركة</b> ثم اختر <b>إضافة إلى الشاشة الرئيسية</b>.');
+  }else{
+    openSystemModal('إذا لم يظهر طلب التثبيت تلقائيًا، افتح قائمة المتصفح.','اختر <b>تثبيت التطبيق</b> أو <b>إضافة إلى الشاشة الرئيسية</b>. بعد التثبيت سيعمل البرنامج دون إنترنت.');
+  }
+});
+
+
+/* تسجيل عامل الخدمة عند الاستضافة الآمنة */
+if('serviceWorker' in navigator && location.protocol!=='file:'){
+  window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));
+}
+</script>
+</body>
+</html>
+
+<style>.app-tools,.install-btn{display:none!important}</style>
