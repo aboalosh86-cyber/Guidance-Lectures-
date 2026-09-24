@@ -1,8 +1,8 @@
-const CACHE_NAME='guided-lectures-text-visible-v2';
+const CACHE_NAME='guided-lectures-balanced-images-v3';
 const CORE=['./','./index.html','./manifest.webmanifest','./icon-180.png','./icon-192.png','./icon-512.png'];
 self.addEventListener('install',event=>{
   self.skipWaiting();
-  event.waitUntil(caches.open(CACHE_NAME).then(c=>c.addAll(CORE)));
+  event.waitUntil(caches.open(CACHE_NAME).then(c=>c.addAll(CORE)).catch(()=>{}));
 });
 self.addEventListener('activate',event=>{
   event.waitUntil(

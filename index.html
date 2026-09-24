@@ -530,7 +530,7 @@ function decodeUtf8Base64(b64){
 document.querySelectorAll('.cover-button').forEach(btn=>btn.addEventListener('click',()=>{
  viewerTitle.textContent=btn.dataset.title;
  const lectureUrl=new URL(lectures[btn.dataset.key],window.location.href);
- lectureUrl.searchParams.set('v','20260924-text-visible-v2');
+ lectureUrl.searchParams.set('v','20260924-balanced-images-v3');
  frame.removeAttribute('srcdoc');
  frame.src=lectureUrl.href;
  viewer.classList.add('open');
@@ -599,7 +599,7 @@ installBtn?.addEventListener('click',async()=>{
 
 /* تسجيل عامل الخدمة عند الاستضافة الآمنة */
 if('serviceWorker' in navigator && location.protocol!=='file:'){
-  window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js?v=20260924-global-mobile-v1',{updateViaCache:'none'}).then(r=>r.update()).catch(()=>{}));
+  window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js?v=20260924-balanced-images-v3',{updateViaCache:'none'}).then(r=>r.update()).catch(()=>{}));
 }
 </script>
 </body>
