@@ -7,9 +7,6 @@
 
 
 <title>الصدق - محاضرة إرشادية</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
 :root{--paper:#fffdfa;--soft:#eef8fc;--blue:#d9eff9;--gold:#e6b84b;--navy:#0d2b47}
 *{box-sizing:border-box}
@@ -195,6 +192,87 @@ h1{margin:0 0 clamp(8px,1.2vh,13px);font-family:"Cairo","Cairo","Segoe UI",Tahom
     height:42dvh!important;
     min-height:145px!important;
     max-height:42dvh!important;
+  }
+}
+</style>
+
+<style id="local-cairo-offline">
+@font-face{font-family:"Cairo";src:url("Cairo-600.ttf") format("truetype");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Cairo";src:url("Cairo-600.ttf") format("truetype");font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:"Cairo";src:url("Cairo-600.ttf") format("truetype");font-weight:600;font-style:normal;font-display:swap}
+@font-face{font-family:"Cairo";src:url("Cairo-700.ttf") format("truetype");font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:"Cairo";src:url("Cairo-800.ttf") format("truetype");font-weight:800;font-style:normal;font-display:swap}
+@font-face{font-family:"Cairo";src:url("Cairo-900.ttf") format("truetype");font-weight:900;font-style:normal;font-display:swap}
+</style>
+
+<style id="landscape-image-big-v4">
+/* تكبير الصور عند تدوير الهاتف للوضع الأفقي */
+@media (orientation:landscape) and (max-height:600px){
+  .slide.active{
+    padding-top:4px!important;
+    padding-left:4px!important;
+    padding-right:4px!important;
+    padding-bottom:66px!important;
+    overflow-y:auto!important;
+    overflow-x:hidden!important;
+    -webkit-overflow-scrolling:touch!important;
+  }
+
+  .slide.active .inner{
+    width:100%!important;
+    height:auto!important;
+    min-height:calc(100dvh - 66px)!important;
+  }
+
+  .slide.active h1{
+    font-size:clamp(18px,3.4vw,26px)!important;
+    line-height:1.08!important;
+    margin:2px 0 3px!important;
+  }
+
+  .slide.active .visual{
+    width:96vw!important;
+    height:58dvh!important;
+    min-height:190px!important;
+    max-height:58dvh!important;
+    margin:2px auto 4px!important;
+    flex-shrink:0!important;
+  }
+
+  .slide.active .visual img,
+  .slide.active .visual picture,
+  .slide.active .visual video{
+    width:100%!important;
+    height:100%!important;
+    max-width:none!important;
+    max-height:none!important;
+    object-fit:contain!important;
+    display:block!important;
+    margin:auto!important;
+  }
+
+  .slide.active .body{
+    width:95vw!important;
+    margin:3px auto 0!important;
+    font-size:13px!important;
+    line-height:1.32!important;
+  }
+
+  .slide.active .question{
+    width:95vw!important;
+    margin:3px auto 0!important;
+    padding:5px 8px!important;
+    font-size:12.5px!important;
+    line-height:1.28!important;
+  }
+}
+
+/* للشاشات الأفقية الأوسع نخلي الصورة تقريباً بكامل العرض */
+@media (orientation:landscape) and (min-width:740px) and (max-height:600px){
+  .slide.active .visual{
+    width:97vw!important;
+    height:62dvh!important;
+    max-height:62dvh!important;
   }
 }
 </style>

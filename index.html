@@ -11,9 +11,6 @@
 <link rel="apple-touch-icon" href="icon-180.png">
 <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
 <title>المحاضرات الإرشادية</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
 :root{--navy:#0d2b47;--navy2:#123d61;--gold:#e6b84b;--ink:#10212d}
 *{box-sizing:border-box}
@@ -210,6 +207,24 @@ html,body,button,input,select,textarea,
 }
 </style>
 
+<style id="local-cairo-offline">
+@font-face{font-family:"Cairo";src:url("Cairo-600.ttf") format("truetype");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Cairo";src:url("Cairo-600.ttf") format("truetype");font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:"Cairo";src:url("Cairo-600.ttf") format("truetype");font-weight:600;font-style:normal;font-display:swap}
+@font-face{font-family:"Cairo";src:url("Cairo-700.ttf") format("truetype");font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:"Cairo";src:url("Cairo-800.ttf") format("truetype");font-weight:800;font-style:normal;font-display:swap}
+@font-face{font-family:"Cairo";src:url("Cairo-900.ttf") format("truetype");font-weight:900;font-style:normal;font-display:swap}
+</style>
+<style id="offline-ready-ui">
+#offlineStatus{
+  position:fixed;left:50%;bottom:14px;transform:translateX(-50%);
+  z-index:20000;display:none;max-width:92vw;padding:9px 14px;
+  border-radius:999px;background:#0d2b47;color:#fff;border:1px solid #e6b84b;
+  box-shadow:0 5px 18px rgba(0,0,0,.26);font:700 12px/1.4 "Cairo",Tahoma,Arial,sans-serif;
+  text-align:center;white-space:nowrap
+}
+#offlineStatus.show{display:block}
+</style>
 </head>
 <body>
 <header class="hero" id="top">
@@ -517,6 +532,7 @@ html,body,button,input,select,textarea,
     <button class="modal-close" id="modalCloseBtn" type="button">حسنًا</button>
   </div>
 </div>
+<div id="offlineStatus" aria-live="polite"></div>
 <script>
 const lectures={"01":"lecture-01.html","02":"lecture-02.html","03":"lecture-03.html","04":"lecture-04.html","05":"lecture-05.html","06":"lecture-06.html","07":"lecture-07.html","08":"lecture-08.html","09":"lecture-09.html","10":"lecture-10.html","11":"lecture-11.html","12":"lecture-12.html","13":"lecture-13.html","14":"lecture-14.html","15":"lecture-15.html","16":"lecture-16.html","17":"lecture-17.html","18":"lecture-18.html","19":"lecture-19.html","20":"lecture-20.html","21":"lecture-21.html","22":"lecture-22.html","23":"lecture-23.html","24":"lecture-24.html","25":"lecture-25.html","26":"lecture-26.html","27":"lecture-27.html","28":"lecture-28.html","29":"lecture-29.html","30":"lecture-30.html"};
 const viewer=document.getElementById('viewer');
@@ -530,7 +546,7 @@ function decodeUtf8Base64(b64){
 document.querySelectorAll('.cover-button').forEach(btn=>btn.addEventListener('click',()=>{
  viewerTitle.textContent=btn.dataset.title;
  const lectureUrl=new URL(lectures[btn.dataset.key],window.location.href);
- lectureUrl.searchParams.set('v','20260924-balanced-images-v3');
+ lectureUrl.searchParams.set('v','20260924-landscape-big-v4');
  frame.removeAttribute('srcdoc');
  frame.src=lectureUrl.href;
  viewer.classList.add('open');
@@ -597,9 +613,51 @@ installBtn?.addEventListener('click',async()=>{
 });
 
 
+/* تجهيز كامل للعمل بدون إنترنت */
+const offlineStatus=document.getElementById('offlineStatus');
+let offlineHideTimer=null;
+function showOfflineStatus(text,keep=false){
+  if(!offlineStatus) return;
+  offlineStatus.textContent=text;
+  offlineStatus.classList.add('show');
+  if(offlineHideTimer) clearTimeout(offlineHideTimer);
+  if(!keep) offlineHideTimer=setTimeout(()=>offlineStatus.classList.remove('show'),4200);
+}
+function askWorkerToCacheAll(reg){
+  const worker=(reg && (reg.active||reg.waiting||reg.installing)) || navigator.serviceWorker.controller;
+  if(worker) worker.postMessage({type:'CACHE_ALL'});
+}
+if('serviceWorker' in navigator){
+  navigator.serviceWorker.addEventListener('message',e=>{
+    const d=e.data||{};
+    if(d.type==='CACHE_PROGRESS'){
+      showOfflineStatus(`جار تجهيز المحاضرات للعمل بدون إنترنت… ${d.done}/${d.total}`,true);
+    }else if(d.type==='CACHE_DONE'){
+      localStorage.setItem('guidanceOfflineReady','1');
+      showOfflineStatus('✓ تم تجهيز جميع المحاضرات للعمل بدون إنترنت');
+    }else if(d.type==='CACHE_ERROR'){
+      showOfflineStatus('تعذر إكمال التجهيز. أبقِ الإنترنت متصلًا وافتح البرنامج مرة أخرى.');
+    }
+  });
+  window.addEventListener('online',()=>{
+    navigator.serviceWorker.ready.then(reg=>askWorkerToCacheAll(reg)).catch(()=>{});
+  });
+  window.addEventListener('offline',()=>{
+    showOfflineStatus('وضع بدون إنترنت — المحاضرات المحفوظة متاحة');
+  });
+}
+
 /* تسجيل عامل الخدمة عند الاستضافة الآمنة */
 if('serviceWorker' in navigator && location.protocol!=='file:'){
-  window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js?v=20260924-balanced-images-v3',{updateViaCache:'none'}).then(r=>r.update()).catch(()=>{}));
+  window.addEventListener('load',async()=>{
+    try{
+      const reg=await navigator.serviceWorker.register('./sw.js?v=20260924-landscape-big-v4',{updateViaCache:'none'});
+      await reg.update().catch(()=>{});
+      const readyReg=await navigator.serviceWorker.ready;
+      askWorkerToCacheAll(readyReg);
+      navigator.serviceWorker.addEventListener('controllerchange',()=>askWorkerToCacheAll(readyReg),{once:true});
+    }catch(e){}
+  });
 }
 </script>
 </body>
